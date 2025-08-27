@@ -1,0 +1,24 @@
+# Toolkit Backend Variables
+export GDK_BACKEND=wayland,x11,*
+export QT_QPA_PLATFORM=wayland;xcb
+export SDL_VIDEODRIVER=wayland
+export CLUTTER_BACKEND=wayland
+# Qt Variables
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_STYLE_OVERRIDE=kvantum
+
+# https://wiki.hyprland.org/Nvidia/
+# Hyprland + Nvidia Environment variables 
+export LIBVA_DRIVER_NAME=nvidia
+export GBM_BACKEND=nvidia-drm
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export __GL_VRR_ALLOWED=0
+# VA-API hardware video acceleration 
+export NVD_BACKEND=direct
+
+# Electron Fix
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+
+export XCURSOR_SIZE=24

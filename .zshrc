@@ -37,12 +37,15 @@ alias c='clear'
 alias co='wl-copy'
 alias ff="firefox-nightly"
 alias l='hyprlock'
+alias l-s='hyprlock -c ~/.config/hypr/hyprlock-server.conf'
+alias l-l='hyprlock -c ~/.config/hypr/hyprlock-lunch.conf'
 alias ls='lsd -Fv --group-directories-first'
 alias n='nvim'
 alias tm='trash-put'
 alias z='zellij'
 
 alias nnvim="cd ~/.config/nvim && nvim"
+alias nhypr="cd ~/.config/hypr && nvim"
 
 alias update-pms='go-global-update; cargo install-update --all; bun update -g --all'
 
@@ -62,10 +65,6 @@ alias sshCRMExtended='ssh apps@192.168.0.152'
 alias sshCRMStaging='ssh apps@192.168.0.45'
 alias sshCarson-Retailer-Dashboard='ssh apps@192.168.0.118'
 
-# xc task runner auto-completion
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /home/jonny/go/bin/xc xc
-
 # NVM
 # source /usr/share/nvm/init-nvm.sh
 
@@ -77,3 +76,6 @@ eval "$(starship init zsh)"
 
 #Load Mise
 eval "$(mise activate zsh)"
+
+#Load Newt Colors
+export NEWT_COLORS_FILE="$HOME/.config/newt/tokyo-night.cfg"

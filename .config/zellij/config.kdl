@@ -4,72 +4,14 @@ keybinds clear-defaults=true {
             SwitchToMode "normal"
         }
     }
-    resize {
-        bind "H" {
-            Resize "Decrease left"
-        }
-        bind "J" {
-            Resize "Decrease down"
-        }
-        bind "K" {
-            Resize "Decrease up"
-        }
-        bind "L" {
-            Resize "Decrease right"
-        }
-        bind "h" {
-            Resize "Increase left"
-        }
-        bind "j" {
-            Resize "Increase down"
-        }
-        bind "k" {
-            Resize "Increase up"
-        }
-        bind "l" {
-            Resize "Increase right"
-        }
-        bind "Alt r" {
-            SwitchToMode "normal"
-        }
-    }
-    move {
-        bind "h" {
-            MovePane "left"
-        }
-        bind "j" {
-            MovePane "down"
-        }
-        bind "k" {
-            MovePane "up"
-        }
-        bind "l" {
-            MovePane "right"
-        }
-        bind "n" {
-            MovePane
-        }
-        bind "o" {
-            TogglePaneEmbedOrFloating
-        }
-        bind "p" {
-            MovePaneBackwards
-        }
-        bind "Alt t" {
-            SwitchToMode "normal"
-        }
-    }
-    shared_except "locked" {
+    normal {
         bind "Alt ." {
             SwitchToMode "locked"
         }
-        bind "Alt /" {
+        bind "Alt ," {
             LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
             }
-        }
-        bind "Alt B" {
-            BreakPane
         }
         bind "Alt H" {
             MoveTab "left"
@@ -113,6 +55,66 @@ keybinds clear-defaults=true {
         }
         bind "Alt s" {
             NewPane "down"
+            SwitchToMode "normal"
+        }
+        bind "Alt /" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/zellij_forgot.wasm" {
+                floating true
+            }
+        }
+    }
+    resize {
+        bind "H" {
+            Resize "Decrease left"
+        }
+        bind "J" {
+            Resize "Decrease down"
+        }
+        bind "K" {
+            Resize "Decrease up"
+        }
+        bind "L" {
+            Resize "Decrease right"
+        }
+        bind "h" {
+            Resize "Increase left"
+        }
+        bind "j" {
+            Resize "Increase down"
+        }
+        bind "k" {
+            Resize "Increase up"
+        }
+        bind "l" {
+            Resize "Increase right"
+        }
+        bind "Alt r" {
+            SwitchToMode "normal"
+        }
+    }
+    move {
+        bind "h" {
+            MovePane "left"
+        }
+        bind "j" {
+            MovePane "down"
+        }
+        bind "k" {
+            MovePane "up"
+        }
+        bind "l" {
+            MovePane "right"
+        }
+        bind "n" {
+            NewPane
+        }
+        bind "o" {
+            TogglePaneEmbedOrFloating
+        }
+        bind "p" {
+            MovePaneBackwards
+        }
+        bind "Alt t" {
             SwitchToMode "normal"
         }
     }
@@ -267,7 +269,7 @@ plugins {
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
-    zjstatus location="file:/home/jonny/.config/zellij/zjstatus.wasm"
+    zjstatus location="file:~/.config/zellij/zjstatus.wasm"
 }
 pane_frames true
 ui {
@@ -280,4 +282,6 @@ scroll_buffer_size 1000000
 copy_command "wl-copy"
 show_startup_tips false
 stacked_resize false
+mouse_mode true
+advanced_mouse_actions false
 

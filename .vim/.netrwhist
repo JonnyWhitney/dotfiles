@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/run/media/jonny/2883-D7D4/home/.config'
+let g:netrw_dirhist_6='/home/jonny/.config'
+let g:netrw_dirhist_5='/run/media/jonny/2883-D7D4/home/.config/xdg-desktop-portal'
+let g:netrw_dirhist_4='/home/jonny/.config/posting'
+let g:netrw_dirhist_3='/run/media/jonny/2883-D7D4/home/.config/mise'
+let g:netrw_dirhist_2='/run/media/jonny/2883-D7D4/home/.config'
+let g:netrw_dirhist_1='/run/media/jonny/2883-D7D4/home/.config/mise'

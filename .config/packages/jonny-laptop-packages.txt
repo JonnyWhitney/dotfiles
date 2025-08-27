@@ -96,6 +96,7 @@ qbittorrent
 qt5-wayland
 qt5ct
 qt6ct
+quickshell
 rclone
 remmina
 ripgrep
@@ -107,9 +108,12 @@ shellcheck
 shfmt
 slurp
 sof-firmware
+sql-formatter
+sqls
 sshfs
 starship
 steam
+streamrip
 stylua
 sudo
 terminus-font
@@ -121,7 +125,9 @@ typescript-language-server
 udiskie
 ufw
 uwsm
+vial-appimage
 vim
+visual-studio-code-bin
 vlc
 vlc-plugins-all
 vscode-css-languageserver

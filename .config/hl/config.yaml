@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/pamburus/hl/master/schema/json/config.schema.json
+$schema: https://raw.githubusercontent.com/pamburus/hl/master/schema/json/config.schema.json
+
+# Time zone name, see column "TZ identifier" at
+# https://en.wikipedia.org/wiki/List_of_tz_database_time_zones page.
+time-zone: "America/New_York"
+
+# Currently selected theme.
+theme: "ayu-dark-24"
