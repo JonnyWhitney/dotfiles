@@ -5,7 +5,33 @@ return {
 	opts = {
 		quickfile = { enabled = true },
 		words = { enabled = true },
-		picker = {},
+		---@type snacks.picker.Config
+		picker = {
+			-- previewers = {
+			-- 	diff = {
+			-- 		cmd = { "delta" },
+			-- 		builtin = false,
+			-- 	},
+			-- },
+			layouts = {
+				default = {
+					layout = {
+						box = "horizontal",
+						width = 0.8,
+						min_width = 120,
+						height = 0.8,
+						{
+							box = "vertical",
+							border = "rounded",
+							title = "{title} {live} {flags}",
+							{ win = "input", height = 1, border = "bottom" },
+							{ win = "list", border = "none" },
+						},
+						{ win = "preview", title = "{preview}", border = "rounded", width = 0.7 },
+					},
+				},
+			},
+		},
 	},
 	keys = {
 		-- PICKER
@@ -111,6 +137,25 @@ return {
 			end,
 			desc = "Git Status",
 		},
+		{
+			"<leader>gd",
+			function()
+				require("snacks").picker.git_diff()
+			end,
+			desc = "Git Diff",
+		},
+		-- {
+		-- 	"<leader>gD",
+		-- 	function()
+		-- 		require("snacks").picker.git_diff(
+		-- 			--- @type snacks.picker.git.Config
+		-- 			{
+		-- 				args = { "--staged" },
+		-- 			}
+		-- 		)
+		-- 	end,
+		-- 	desc = "Git Diff",
+		-- },
 		-- LSP
 		{
 			"gd",
@@ -128,11 +173,12 @@ return {
 			desc = "References",
 		},
 		{
-			"gI",
+			"gri",
 			function()
 				require("snacks").picker.lsp_implementations()
 			end,
-			desc = "Goto Implementation",
+			nowait = true,
+			desc = "Implementations",
 		},
 		{
 			"KT",

@@ -5,16 +5,11 @@ return {
 	-- 		"nvim-lua/plenary.nvim",
 	-- 	},
 	-- 	opts = {
-	--
-	-- 		model = "gemini-2.5-flash",
-	-- 		-- system = "see [Prompt] section for the default value",
-	-- 		-- few_shots = "see [Prompt] section for the default value",
-	-- 		-- chat_input = "See [Prompt Section for default value]",
+	-- 		blink = { enable_auto_complete = true },
+	-- 		model = "gemini-2.0-flash",
 	-- 		stream = true,
-	-- 		blink = {
-	-- 			enable_auto_complete = true,
-	-- 		},
 	-- 		provider = "gemini",
+	-- 		api_key = "GEMINI_API_KEY",
 	-- 		end_point = "https://generativelanguage.googleapis.com/v1beta/models",
 	-- 		provider_options = {
 	-- 			gemini = {

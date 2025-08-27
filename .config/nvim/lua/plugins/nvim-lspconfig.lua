@@ -49,9 +49,11 @@ return {
 		-- 	filetypes = { "html", "javascriptreact", "templ", "typescriptreact" },
 		-- 	init_options = { userLanguages = { templ = "html" } },
 		-- }
+		serverOpts["tailwindcss"] = {}
 		serverOpts["ts_ls"] = {}
 		serverOpts["templ"] = {}
 		serverOpts["taplo"] = {}
+		serverOpts["qmlls"] = { cmd = { "qmlls6" } }
 		serverOpts["yamlls"] = {}
 
 		-- Setup each server

@@ -21,6 +21,8 @@ vim.o.cursorline = true
 vim.o.scrolloff = 5
 vim.o.sidescrolloff = 5
 
+vim.opt_global.listchars = { tab = "» ", space = "·", nbsp = "␣" }
+
 vim.o.undofile = true
 vim.o.swapfile = false
 vim.o.autoread = true
@@ -95,9 +97,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	pattern = "*",
 	command = 'silent! normal! g`"zv',
 })
-
-vim.keymap.set("n", "<C-w>H", ":tabprevious<cr>", { noremap = true, desc = "previous tab" })
-vim.keymap.set("n", "<C-w>L", ":tabnext<cr>", { noremap = true, desc = "next tab" })
 
 -- go nice error
 vim.keymap.set("n", "<leader>Ge", "oif err != nil {}<esc>", { desc = "go insert err check" })

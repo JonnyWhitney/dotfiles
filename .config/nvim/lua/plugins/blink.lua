@@ -16,11 +16,12 @@ return {
 	opts = {
 		sources = {
 			default = {
+				-- Paths
 				"lsp",
 				"path",
 				"buffer",
 				"lazydev",
-				-- "minuet"
+				-- "minuet",
 			},
 			providers = {
 				lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
