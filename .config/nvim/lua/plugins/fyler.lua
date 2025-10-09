@@ -1,16 +1,12 @@
 return {
 	"A7Lavinraj/fyler.nvim",
-	dependencies = { "echasnovski/mini.icons" },
+	dependencies = { "nvim-mini/mini.icons" },
 	opts = {
-		views = {
-			explorer = {
-				win = {
-					kind = "split_left_most",
-					kind_presets = {
-						split_left_most = {
-							width = "40abs",
-						},
-					},
+		win = {
+			kind = "split_left_most",
+			kind_presets = {
+				split_left_most = {
+					width = "40abs",
 				},
 			},
 		},

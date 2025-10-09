@@ -46,21 +46,62 @@ keybinds clear-defaults=true {
         bind "Alt o" {
             ToggleFloatingPanes
         }
-        bind "Alt e" {
-            EditScrollback
-        }
         bind "Alt v" {
             NewPane "right"
-            SwitchToMode "normal"
         }
         bind "Alt s" {
             NewPane "down"
-            SwitchToMode "normal"
         }
-        bind "Alt /" {
+        bind "Alt Shift /" {
             LaunchOrFocusPlugin "file:~/.config/zellij/zellij_forgot.wasm" {
                 floating true
             }
+        }
+    }
+    scroll {
+        bind "j" {
+            ScrollDown
+        }
+        bind "k" {
+            ScrollUp
+        }
+        bind "d" {
+            HalfPageScrollDown
+        }
+        bind "u" {
+            HalfPageScrollUp
+        }
+        bind "e" {
+            EditScrollback
+            SwitchToMode "Normal"
+        }
+        bind "/" {
+            SwitchToMode "EnterSearch"
+        }
+    }
+    entersearch {
+        bind "Enter" {
+            SwitchToMode "Search"
+        }
+        bind "esc" {
+            SwitchToMode "Scroll"
+        }
+    }
+    search {
+        bind "c" {
+            SearchToggleOption "CaseSensitivity"
+        }
+        bind "w" {
+            SearchToggleOption "Wrap"
+        }
+        bind "o" {
+            SearchToggleOption "WholeWord"
+        }
+        bind "Enter" {
+            SwitchToMode "EnterSearch"
+        }
+        bind "esc" {
+            SwitchToMode "Scroll"
         }
     }
     resize {
@@ -105,17 +146,22 @@ keybinds clear-defaults=true {
         bind "l" {
             MovePane "right"
         }
-        bind "n" {
+        bind "v" {
             NewPane
         }
         bind "o" {
             TogglePaneEmbedOrFloating
         }
-        bind "p" {
-            MovePaneBackwards
+        bind "x" {
+            CloseFocus
         }
         bind "Alt t" {
             SwitchToMode "normal"
+        }
+    }
+    shared_except "locked" "scroll" {
+        bind "Alt e" {
+            SwitchToMode "scroll"
         }
     }
     shared_except "locked" "move" {
@@ -128,7 +174,7 @@ keybinds clear-defaults=true {
             SwitchToMode "resize"
         }
     }
-    shared_except "normal" "locked" {
+    shared_except "normal" "locked" "EnterSearch" "Search" {
         bind "esc" {
             SwitchToMode "normal"
         }

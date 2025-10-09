@@ -6,6 +6,7 @@ return {
 	config = function()
 		local langs = {
 			"bash",
+			"caddy",
 			"comment",
 			"css",
 			-- "csv", Just Use Plugin
@@ -37,6 +38,7 @@ return {
 			"proto",
 			"query",
 			"qmljs",
+			"regex",
 			"rust",
 			"scheme",
 			"sql",
@@ -45,6 +47,7 @@ return {
 			"tsx",
 			"typescript",
 			"vimdock",
+			"vue",
 			"yaml",
 			"zig",
 		}

@@ -106,3 +106,14 @@ vim.keymap.set(
 	'wbi(<esc>ea)<esc>Bifmt.Errorf<esc>lli"%w", <esc>Ff;<esc>f%',
 	{ desc = "go wrap err" }
 )
+
+vim.filetype.add({
+	extension = {
+		service = "systemd",
+		mount = "systemd",
+		device = "systemd",
+		nspawn = "systemd",
+		target = "systemd",
+		timer = "systemd",
+	},
+})

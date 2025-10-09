@@ -1,5 +1,8 @@
 acpi
+acpid
+alacritty
 anydesk-bin
+asdf-vm
 base
 base-devel
 bash-language-server
@@ -35,8 +38,10 @@ firefox-nightly
 flameshot
 foot
 freerdp
+fuzzel
 fwupd
 fzf
+gamemode
 git
 git-delta
 gnome-tweaks
@@ -52,6 +57,7 @@ hyprpaper-git
 hyprpolkitagent-git
 intel-ucode
 jq
+kdlfmt
 kvantum
 kvantum-qt5
 lib32-nvidia-utils
@@ -59,6 +65,7 @@ lib32-pipewire
 lib32-pipewire-jack
 libreoffice-fresh
 libva-nvidia-driver
+libva-utils
 linux
 linux-firmware
 linux-headers
@@ -70,6 +77,7 @@ man-db
 man-pages
 markdownlint-cli
 marksman
+mesa-utils
 mise
 mixxx
 mkinitcpio-firmware
@@ -78,6 +86,7 @@ nemo-fileroller
 neovim-git
 netextender
 networkmanager
+niri-git
 nodejs
 noto-fonts-cjk
 noto-fonts-emoji
@@ -85,13 +94,17 @@ noto-fonts-extra
 npm
 nvidia-open-dkms
 nvidia-utils
+obs-studio
 otf-commit-mono-nerd
 pacutils
 paru
 paru-debug
 pavucontrol
+piper
 pipewire-alsa
 pipewire-pulse
+prettier
+protontricks
 qbittorrent
 qt5-wayland
 qt5ct
@@ -103,6 +116,7 @@ ripgrep
 rsync
 rustup
 satty
+scarab-bin
 sheldon
 shellcheck
 shfmt
@@ -113,9 +127,11 @@ sqls
 sshfs
 starship
 steam
+steamcmd
 streamrip
 stylua
 sudo
+taplo-cli
 terminus-font
 trash-cli
 tree-sitter-cli
@@ -124,6 +140,7 @@ ttf-play
 typescript-language-server
 udiskie
 ufw
+uv
 uwsm
 vial-appimage
 vim
@@ -143,6 +160,8 @@ wine-mono
 winetricks
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland-git
+xorg-xeyes
+xwayland-satellite
 yaml-language-server
 zellij
 zip

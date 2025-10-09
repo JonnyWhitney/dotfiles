@@ -59,6 +59,27 @@ f() {
         cd "$(dirname "$selected_path")" || exit
     fi
 }
+fh() {
+    local original_dir="$PWD"
+    cd "$HOME" || exit
+    selected_path=$(command fzf)
+    local fzf_exit_code=$?
+
+    # If fzf was cancelled with Ctrl+C (exit code 130)
+    if [[ $fzf_exit_code -eq 130 ]]; then
+        cd "$original_dir" || exit
+        return
+    fi
+
+    if [[ -d "$selected_path" ]]; then
+        cd "$selected_path" || exit
+    elif [[ -f "$selected_path" ]]; then
+        cd "$(dirname "$selected_path")" || exit
+    else
+        # If no valid selection, go back to original directory
+        cd "$original_dir" || exit
+    fi
+}
 alias fzc='fzf | wl-copy'
 
 alias sshCRMExtended='ssh apps@192.168.0.152'

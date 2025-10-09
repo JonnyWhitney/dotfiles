@@ -1,12 +1,8 @@
-vim.bo.commentstring = "// %s"
-
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "templ" },
+	pattern = { "go" },
 	callback = function()
 		vim.bo.expandtab = false
 		vim.bo.tabstop = 4
 		vim.bo.shiftwidth = 4
-
-		vim.treesitter.start()
 	end,
 })

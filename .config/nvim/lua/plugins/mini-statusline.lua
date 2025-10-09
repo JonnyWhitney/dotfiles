@@ -1,5 +1,5 @@
 return {
-	"echasnovski/mini.statusline",
+	"nvim-mini/mini.statusline",
 	event = "VeryLazy",
 	version = false,
 	opts = {

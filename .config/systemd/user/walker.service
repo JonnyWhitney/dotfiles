@@ -1,0 +1,13 @@
+[Unit]
+Description=Run Walker Daemon via uwsm
+# Ensures the graphical session is ready before starting
+Requires=elephant.service
+After=elephant.service
+
+[Service]
+ExecStart=/usr/bin/uwsm app -- walker --gapplication-service
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=elephant.service

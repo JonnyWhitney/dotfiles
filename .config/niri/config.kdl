@@ -1,0 +1,266 @@
+input {
+    keyboard {
+        repeat-delay 350
+        repeat-rate 100
+        numlock
+    }
+    touchpad {
+        natural-scroll
+        accel-speed 1
+        accel-profile "flat"
+    }
+    mouse {
+        accel-speed 0.1
+        accel-profile "flat"
+    }
+    trackpoint {
+        accel-speed 0.5
+        accel-profile "flat"
+    }
+    warp-mouse-to-focus
+    focus-follows-mouse
+}
+// Builtin
+output "eDP-1" {
+    mode "3840x2400@60.000"
+    scale 2
+    position x=0 y=0
+}
+// Home
+// output "GIGA-BYTE TECHNOLOGY CO. LTD." {
+//     mode "3440x1440@143.975"
+//     position x=1920 y=0
+// }
+// Work
+output "Dell Inc. DELL S3422DWG HFG4KK3" {
+    mode "3440x1440@143.975"
+    position x=-3440 y=-500
+}
+// Settings that influence how windows are positioned and sized.
+// Find more information on the wiki:
+// https://yalter.github.io/niri/Configuration:-Layout
+layout {
+    // Set gaps around windows in logical pixels.
+    gaps 6
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.3
+        proportion 0.5
+        proportion 0.7
+    }
+    default-column-width {
+        proportion 0.5
+    }
+    // If you leave the brackets empty, the windows themselves will decide their initial width.
+    // default-column-width {}
+    focus-ring {
+        off
+    }
+    border {
+        // The settings are the same as for the focus ring.
+        // If you enable the border, you probably want to disable the focus ring.
+        // off
+        width 3
+        active-color "#00ffff"
+        inactive-color "#888888"
+        // Color of the border around windows that request your attention.
+        urgent-color "#9b0000"
+    }
+}
+// This line starts waybar, a commonly used bar for Wayland compositors.
+// spawn-at-startup "waybar"
+// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
+// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+hotkey-overlay {
+ // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
+ // skip-at-startup
+
+}
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+animations {
+    off
+}
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    // This app-id regular expression will work for both:
+    // - host Firefox (app-id is "firefox")
+    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
+    match app-id="firefox-nightly" title="^Picture-in-Picture$"
+    open-floating true
+}
+binds {
+    // ===== Application Launching =====
+    Super+f hotkey-overlay-title="Open Terminal with Zellij" {
+        spawn-sh "uwsm app -- foot -e zellij"
+    }
+    Super+Shift+F hotkey-overlay-title="Open Terminal" {
+        spawn-sh "uwsm app -- foot"
+    }
+    Super+Space hotkey-overlay-title="Launch Walker" {
+        spawn-sh "uwsm app -- walker"
+    }
+    // ===== Screenshots =====
+    Print hotkey-overlay-title="Take Screenshot with Satty" {
+        spawn-sh "grim -g \"$(slurp -o -r )\" - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"
+    }
+    // ===== Window Management =====
+    Super+Shift+Y hotkey-overlay-title="Close Window" {
+        close-window
+    }
+    Super+Shift+Q hotkey-overlay-title="Logout" {
+        spawn-sh "loginctl terminate-session \"$XDG_SESSION_ID\""
+    }
+    Super+p hotkey-overlay-title="Fullscreen Window" {
+        fullscreen-window
+    }
+    Super+o hotkey-overlay-title="Toggle Floating" {
+        toggle-window-floating
+    }
+    // ===== Focus Movement (Vim keys) =====
+    Super+h {
+        focus-column-left
+    }
+    Super+j {
+        focus-window-down
+    }
+    Super+k {
+        focus-window-up
+    }
+    Super+l {
+        focus-column-right
+    }
+    // ===== Window/Column Movement =====
+    // In niri, Shift+H/J/K/L moves between monitors
+    // Use Ctrl+H/J/K/L for moving columns/windows
+    Super+Shift+H {
+        move-column-left
+    }
+    Super+Shift+J {
+        move-window-down
+    }
+    Super+Shift+K {
+        move-window-up
+    }
+    Super+Shift+L {
+        move-column-right
+    }
+    // ===== Workspace Switching =====
+    Super+1 {
+        focus-workspace 1
+    }
+    Super+2 {
+        focus-workspace 2
+    }
+    Super+3 {
+        focus-workspace 3
+    }
+    Super+4 {
+        focus-workspace 4
+    }
+    Super+5 {
+        focus-workspace 5
+    }
+    Super+6 {
+        focus-workspace 6
+    }
+    Super+7 {
+        focus-workspace 7
+    }
+    Super+8 {
+        focus-workspace 8
+    }
+    Super+9 {
+        focus-workspace 9
+    }
+    Super+0 {
+        focus-workspace 10
+    }
+    // ===== Move to Workspace =====
+    Super+Shift+1 {
+        move-column-to-workspace 1
+    }
+    Super+Shift+2 {
+        move-column-to-workspace 2
+    }
+    Super+Shift+3 {
+        move-column-to-workspace 3
+    }
+    Super+Shift+4 {
+        move-column-to-workspace 4
+    }
+    Super+Shift+5 {
+        move-column-to-workspace 5
+    }
+    Super+Shift+6 {
+        move-column-to-workspace 6
+    }
+    Super+Shift+7 {
+        move-column-to-workspace 7
+    }
+    Super+Shift+8 {
+        move-column-to-workspace 8
+    }
+    Super+Shift+9 {
+        move-column-to-workspace 9
+    }
+    Super+Shift+0 {
+        move-column-to-workspace 10
+    }
+    // ===== Workspace Navigation (U/I keys as alternatives) =====
+    Super+u {
+        focus-workspace-down
+    }
+    Super+i {
+        focus-workspace-up
+    }
+    // ===== Mouse Wheel Workspace Switching =====
+    Super+WheelScrollDown cooldown-ms=150 {
+        focus-workspace-down
+    }
+    Super+WheelScrollUp cooldown-ms=150 {
+        focus-workspace-up
+    }
+    // ===== Window Pinning (niri doesn't have native pin, but can keep on top) =====
+    // Super+c hotkey-overlay-title="Toggle Always on Top" {
+    //     toggle-window-always-on-top
+    // }
+    // ===== Resize Mode (Super+r to enter, r to reset to 2:1, hjkl to resize, Super+r or any other key to exit) =====
+    Super+r {
+        switch-preset-column-width
+    }
+    Super+Shift+r {
+        switch-preset-window-height
+    }
+    // For manual resizing, use these bindings:
+    Super+Minus {
+        set-column-width "-5%"
+    }
+    Super+Equal {
+        set-column-width "+5%"
+    }
+    Super+Shift+Minus {
+        set-window-height "-5%"
+    }
+    Super+Shift+Equal {
+        set-window-height "+5%"
+    }
+    // ===== Move Mode Alternative (Super+t for maximize column, similar to your move mode) =====
+    Super+t {
+        maximize-column
+    }
+    Super+Shift+t {
+        reset-window-height
+    }
+    // ===== Additional Useful Bindings =====
+    Super+Shift+Slash {
+        show-hotkey-overlay
+    }
+    Super+Escape allow-inhibiting=false {
+        toggle-keyboard-shortcuts-inhibit
+    }
+}
+debug {
+    wait-for-frame-completion-before-queueing
+}
+

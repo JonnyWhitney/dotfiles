@@ -39,7 +39,7 @@ return {
 		{
 			"<leader>ff",
 			function()
-				require("snacks").picker.files()
+				require("snacks").picker.files({ cmd = "fd" })
 			end,
 			desc = "Find Files",
 		},
@@ -47,7 +47,11 @@ return {
 			"<leader>fF",
 			function()
 				---@diagnostic disable-next-line: missing-fields
-				require("snacks").picker.files({ hidden = true, ignored = true })
+				require("snacks").picker.files({
+					cmd = "fd",
+					hidden = true,
+					ignored = true,
+				})
 			end,
 			desc = "Find All Files",
 		},
@@ -141,6 +145,13 @@ return {
 			"<leader>gd",
 			function()
 				require("snacks").picker.git_diff()
+			end,
+			desc = "Git Diff",
+		},
+		{
+			"<leader>fe",
+			function()
+				require("snacks").picker.explorer()
 			end,
 			desc = "Git Diff",
 		},

@@ -1,13 +1,12 @@
 [keybinds]
-next = "ctrl n"
-previous = "ctrl p"
-
+next =["ctrl n"]
+previous = ["ctrl p"]
 
 [providers]
 default = ["desktopapplications", "runner"] # providers to be queried by default
 empty = ["desktopapplications"]             # providers to be queried when query is empty
 
 [providers.runner]
-start = "enter"
-start_terminal = "ctrl enter"
-# generic_entry = true
+start = "Return"
+start_terminal = "ctrl Return"
+eneric_entry = true
