@@ -1,6 +1,5 @@
 acpi
 acpid
-alacritty
 anydesk-bin
 asdf-vm
 base
@@ -18,6 +17,7 @@ clang
 cliphist
 cups
 cups-pdf
+delve
 deno
 discord
 dkms
@@ -38,7 +38,6 @@ firefox-nightly
 flameshot
 foot
 freerdp
-fuzzel
 fwupd
 fzf
 gamemode
@@ -54,9 +53,14 @@ hyprland-git
 hyprlock-git
 hyprls-git
 hyprpaper-git
+hyprpicker-git
 hyprpolkitagent-git
+hyprpwcenter-git
+hyprtoolkit-git
+iniparser
 intel-ucode
 jq
+kanata-bin
 kdlfmt
 kvantum
 kvantum-qt5
@@ -86,7 +90,6 @@ nemo-fileroller
 neovim-git
 netextender
 networkmanager
-niri-git
 nodejs
 noto-fonts-cjk
 noto-fonts-emoji
@@ -158,10 +161,10 @@ whois
 wine
 wine-mono
 winetricks
+xdg-desktop-portal-gnome
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland-git
 xorg-xeyes
-xwayland-satellite
 yaml-language-server
 zellij
 zip

@@ -29,7 +29,7 @@ return {
 
 			templ = { "templ" },
 
-			kdl = { "kdlfmt" },
+			-- kdl = { "kdlfmt" },
 		},
 		format_on_save = function(bufnr)
 			-- Disable with a global or buffer-local variable

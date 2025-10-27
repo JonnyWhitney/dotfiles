@@ -1,0 +1,48 @@
+;; Kanata configuration for home row mods
+;; Targets: Lenovo Traditional USB Keyboard + Laptop built-in keyboard
+
+(defcfg
+  linux-dev-names-include (
+    "Lenovo Lenovo Traditional USB Keyboard"
+    "AT Translated Set 2 keyboard"
+  )
+  process-unmapped-keys yes
+)
+
+;; Define the source keyboard layout (full QWERTY)
+(defsrc
+  esc  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+;; Base layer with home row mods
+;; tap-hold timeout: 200ms
+;; Swaps: Esc <-> Caps Lock
+;; Home row mods:
+;;   a → Left Shift   | ; → Right Shift
+;;   s → Left Ctrl    | l → Right Ctrl
+;;   d → Left Super   | k → Right Super
+;;   f → Left Alt     | j → Right Alt
+(deflayer base
+  caps grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  esc  @a   @s   @d   @f   g    h    @j   @k   @l   @;   '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+;; Home row mod definitions
+;; Syntax: (tap-hold <tap-repress-timeout> <hold-timeout> <tap-action> <hold-action>)
+(defalias
+  a (tap-hold 200 200 a lsft)
+  s (tap-hold 200 200 s lctl)
+  d (tap-hold 200 200 d lmet)
+  f (tap-hold 200 200 f lalt)
+  j (tap-hold 200 200 j ralt)
+  k (tap-hold 200 200 k rmet)
+  l (tap-hold 200 200 l rctl)
+  ; (tap-hold 200 200 ; rsft)
+)

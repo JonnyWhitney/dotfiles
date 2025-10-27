@@ -1,3 +1,65 @@
+// ===== Outputs =====
+// === Builtin ===
+output "eDP-1" {
+    mode "3840x2400@60.000"
+    scale 2
+    position x=0 y=0
+}
+// === Home ===
+output "GIGA-BYTE TECHNOLOGY CO. LTD." {
+    mode "3440x1440@143.975"
+    position x=1920 y=0
+}
+// === Work ===
+output "Dell Inc. DELL S3422DWG HFG4KK3" {
+    mode "3440x1440@143.975"
+    scale 1
+    position x=-3440 y=-500
+}
+
+// ===== Layouts =====
+// === Base Layout Settings ===
+layout {
+    gaps 6
+    center-focused-column "never"
+    always-center-single-column
+    preset-column-widths {
+        proportion 0.3
+        proportion 0.5
+        proportion 0.7
+        proportion 1.0
+    }
+    default-column-width {}
+    preset-window-heights {
+        proportion 0.3
+        proportion 0.5
+        proportion 0.7
+        proportion 1.0
+    }
+    focus-ring { off; }
+    border {
+        width 3
+        active-color "#00ffff"
+        inactive-color "#888888"
+        urgent-color "#9b0000"
+    }
+}
+// === No Client Side Decorations ===
+prefer-no-csd
+// animations {off;}
+// === Window Rules ===
+// === Rounding ===
+window-rule {
+    geometry-corner-radius 6
+    clip-to-geometry true
+}
+// = Float FF PiP =
+window-rule {
+    match app-id="firefox-nightly" title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// ===== Input =====
 input {
     keyboard {
         repeat-delay 350
@@ -17,250 +79,139 @@ input {
         accel-speed 0.5
         accel-profile "flat"
     }
-    warp-mouse-to-focus
+    warp-mouse-to-focus mode="center-xy"
     focus-follows-mouse
 }
-// Builtin
-output "eDP-1" {
-    mode "3840x2400@60.000"
-    scale 2
-    position x=0 y=0
-}
-// Home
-// output "GIGA-BYTE TECHNOLOGY CO. LTD." {
-//     mode "3440x1440@143.975"
-//     position x=1920 y=0
-// }
-// Work
-output "Dell Inc. DELL S3422DWG HFG4KK3" {
-    mode "3440x1440@143.975"
-    position x=-3440 y=-500
-}
-// Settings that influence how windows are positioned and sized.
-// Find more information on the wiki:
-// https://yalter.github.io/niri/Configuration:-Layout
-layout {
-    // Set gaps around windows in logical pixels.
-    gaps 6
-    center-focused-column "never"
-    preset-column-widths {
-        proportion 0.3
-        proportion 0.5
-        proportion 0.7
-    }
-    default-column-width {
-        proportion 0.5
-    }
-    // If you leave the brackets empty, the windows themselves will decide their initial width.
-    // default-column-width {}
-    focus-ring {
-        off
-    }
-    border {
-        // The settings are the same as for the focus ring.
-        // If you enable the border, you probably want to disable the focus ring.
-        // off
-        width 3
-        active-color "#00ffff"
-        inactive-color "#888888"
-        // Color of the border around windows that request your attention.
-        urgent-color "#9b0000"
-    }
-}
-// This line starts waybar, a commonly used bar for Wayland compositors.
-// spawn-at-startup "waybar"
-// To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
-// spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
-hotkey-overlay {
- // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
- // skip-at-startup
 
+gestures {
+    hot-corners { off; }
 }
-prefer-no-csd
+
+
+// ===== Misc =====
+// === No startup overlay ===
+hotkey-overlay {
+    skip-at-startup
+}
+// === Screenshot Path ===
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-animations {
-    off
-}
-// Open the Firefox picture-in-picture player as floating by default.
-window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-    match app-id="firefox-nightly" title="^Picture-in-Picture$"
-    open-floating true
-}
+
+// ===== Binds =====
 binds {
     // ===== Application Launching =====
-    Super+f hotkey-overlay-title="Open Terminal with Zellij" {
-        spawn-sh "uwsm app -- foot -e zellij"
+    Super+f       hotkey-overlay-title="Open Terminal with Zellij" { 
+        spawn-sh "foot -e zellij"; 
     }
-    Super+Shift+F hotkey-overlay-title="Open Terminal" {
-        spawn-sh "uwsm app -- foot"
+    Super+Shift+F hotkey-overlay-title="Open Terminal" { 
+        spawn-sh "foot";
     }
-    Super+Space hotkey-overlay-title="Launch Walker" {
-        spawn-sh "uwsm app -- walker"
+    Super+Space   hotkey-overlay-title="Launch Walker" {
+        spawn-sh "walker"; 
     }
     // ===== Screenshots =====
-    Print hotkey-overlay-title="Take Screenshot with Satty" {
+    Print         hotkey-overlay-title="Take Screenshot with Satty" {
         spawn-sh "grim -g \"$(slurp -o -r )\" - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png"
     }
     // ===== Window Management =====
-    Super+Shift+Y hotkey-overlay-title="Close Window" {
-        close-window
-    }
-    Super+Shift+Q hotkey-overlay-title="Logout" {
-        spawn-sh "loginctl terminate-session \"$XDG_SESSION_ID\""
-    }
-    Super+p hotkey-overlay-title="Fullscreen Window" {
-        fullscreen-window
-    }
-    Super+o hotkey-overlay-title="Toggle Floating" {
-        toggle-window-floating
-    }
-    // ===== Focus Movement (Vim keys) =====
-    Super+h {
-        focus-column-left
-    }
-    Super+j {
-        focus-window-down
-    }
-    Super+k {
-        focus-window-up
-    }
-    Super+l {
-        focus-column-right
-    }
-    // ===== Window/Column Movement =====
-    // In niri, Shift+H/J/K/L moves between monitors
-    // Use Ctrl+H/J/K/L for moving columns/windows
-    Super+Shift+H {
-        move-column-left
-    }
-    Super+Shift+J {
-        move-window-down
-    }
-    Super+Shift+K {
-        move-window-up
-    }
-    Super+Shift+L {
-        move-column-right
-    }
-    // ===== Workspace Switching =====
-    Super+1 {
-        focus-workspace 1
-    }
-    Super+2 {
-        focus-workspace 2
-    }
-    Super+3 {
-        focus-workspace 3
-    }
-    Super+4 {
-        focus-workspace 4
-    }
-    Super+5 {
-        focus-workspace 5
-    }
-    Super+6 {
-        focus-workspace 6
-    }
-    Super+7 {
-        focus-workspace 7
-    }
-    Super+8 {
-        focus-workspace 8
-    }
-    Super+9 {
-        focus-workspace 9
-    }
-    Super+0 {
-        focus-workspace 10
-    }
-    // ===== Move to Workspace =====
-    Super+Shift+1 {
-        move-column-to-workspace 1
-    }
-    Super+Shift+2 {
-        move-column-to-workspace 2
-    }
-    Super+Shift+3 {
-        move-column-to-workspace 3
-    }
-    Super+Shift+4 {
-        move-column-to-workspace 4
-    }
-    Super+Shift+5 {
-        move-column-to-workspace 5
-    }
-    Super+Shift+6 {
-        move-column-to-workspace 6
-    }
-    Super+Shift+7 {
-        move-column-to-workspace 7
-    }
-    Super+Shift+8 {
-        move-column-to-workspace 8
-    }
-    Super+Shift+9 {
-        move-column-to-workspace 9
-    }
-    Super+Shift+0 {
-        move-column-to-workspace 10
-    }
+    Super+Shift+Y hotkey-overlay-title="Close Window"             { close-window; }
+    Super+Shift+Q hotkey-overlay-title="Logout"                   { quit; }
+    Super+p       hotkey-overlay-title="Fullscreen Window"        { fullscreen-window; }
+    Super+o       hotkey-overlay-title="Toggle Floating"          { toggle-window-floating; }
+    Super+Shift+O hotkey-overlay-title="Toggle Float/Tile Focus"  { switch-focus-between-floating-and-tiling; }
+    // ===== Window/Column Navigation =====
+    Super+h       { focus-column-or-monitor-left; }
+    Super+j       { focus-window-or-workspace-down; }
+    Super+k       { focus-window-or-workspace-up; }
+    Super+l       { focus-column-or-monitor-right; }
+    Super+Shift+H { move-column-left-or-to-monitor-left; }
+    Super+Shift+J { move-window-down-or-to-workspace-down; }
+    Super+Shift+K { move-window-up-or-to-workspace-up; }
+    Super+Shift+L { move-column-right-or-to-monitor-right; }
+    // ===== Monitor Navigation =====
+    Super+Alt+h       { focus-monitor-left; }
+    Super+Alt+j       { focus-monitor-down; }
+    Super+Alt+k       { focus-monitor-up; }
+    Super+Alt+l       { focus-monitor-right; }
+    Super+Alt+Shift+H { move-window-to-monitor-left; }
+    Super+Alt+Shift+J { move-window-to-monitor-down; }
+    Super+Alt+Shift+K { move-window-to-monitor-up; }
+    Super+Alt+Shift+L { move-window-to-monitor-right; }
     // ===== Workspace Navigation (U/I keys as alternatives) =====
-    Super+u {
-        focus-workspace-down
-    }
-    Super+i {
-        focus-workspace-up
-    }
+    Super+Ctrl+Alt+Shift+H { move-workspace-to-monitor-left; }
+    Super+Ctrl+Alt+Shift+J { move-workspace-down; }
+    Super+Ctrl+Alt+Shift+K { move-workspace-up; }
+    Super+Ctrl+Alt+Shift+L { move-workspace-to-monitor-right; }
+    // ===== Additional Workspace Navigation =====
     // ===== Mouse Wheel Workspace Switching =====
-    Super+WheelScrollDown cooldown-ms=150 {
-        focus-workspace-down
-    }
-    Super+WheelScrollUp cooldown-ms=150 {
-        focus-workspace-up
-    }
-    // ===== Window Pinning (niri doesn't have native pin, but can keep on top) =====
-    // Super+c hotkey-overlay-title="Toggle Always on Top" {
-    //     toggle-window-always-on-top
-    // }
-    // ===== Resize Mode (Super+r to enter, r to reset to 2:1, hjkl to resize, Super+r or any other key to exit) =====
-    Super+r {
-        switch-preset-column-width
-    }
-    Super+Shift+r {
-        switch-preset-window-height
-    }
-    // For manual resizing, use these bindings:
-    Super+Minus {
-        set-column-width "-5%"
-    }
-    Super+Equal {
-        set-column-width "+5%"
-    }
-    Super+Shift+Minus {
-        set-window-height "-5%"
-    }
-    Super+Shift+Equal {
-        set-window-height "+5%"
-    }
-    // ===== Move Mode Alternative (Super+t for maximize column, similar to your move mode) =====
-    Super+t {
-        maximize-column
-    }
-    Super+Shift+t {
-        reset-window-height
-    }
+    Super+WheelScrollUp         { focus-column-or-monitor-left; }
+    Super+WheelScrollDown       { focus-column-or-monitor-right; }
+    Super+Shift+WheelScrollUp   { move-column-left-or-to-monitor-left; }
+    Super+Shift+WheelScrollDown { move-column-right-or-to-monitor-right; }
+    // ===== Mouse Wheel Column Navigation =====
+    Super+Ctrl+WheelScrollDown       { focus-window-or-workspace-down; }
+    Super+Ctrl+WheelScrollUp         { focus-window-or-workspace-up; }
+    Super+Shift+Ctrl+WheelScrollDown { move-window-down-or-to-workspace-down; }
+    Super+Shift+Ctrl+WheelScrollUp   { move-window-up-or-to-workspace-up; }
+    // ===== Mouse Wheel Monitor Navigation =====
+    Super+Alt+WheelScrollDown       { focus-monitor-right; }
+    Super+Alt+WheelScrollUp         { focus-monitor-left; }
+    Super+Alt+Shift+WheelScrollDown { move-window-to-monitor-right; }
+    Super+Alt+Shift+WheelScrollUp   { move-window-to-monitor-left; }
+    // ===== Workspace Switching =====
+    Super+1       { focus-workspace 1; }
+    Super+2       { focus-workspace 2; }
+    Super+3       { focus-workspace 3; }
+    Super+4       { focus-workspace 4; }
+    Super+5       { focus-workspace 5; }
+    Super+6       { focus-workspace 6; }
+    Super+7       { focus-workspace 7; }
+    Super+8       { focus-workspace 8; }
+    Super+9       { focus-workspace 9; }
+    Super+0       { focus-workspace 10; }
+    Super+Shift+1 { move-column-to-workspace 1; }
+    Super+Shift+2 { move-column-to-workspace 2; }
+    Super+Shift+3 { move-column-to-workspace 3; }
+    Super+Shift+4 { move-column-to-workspace 4; }
+    Super+Shift+5 { move-column-to-workspace 5; }
+    Super+Shift+6 { move-column-to-workspace 6; }
+    Super+Shift+7 { move-column-to-workspace 7; }
+    Super+Shift+8 { move-column-to-workspace 8; }
+    Super+Shift+9 { move-column-to-workspace 9; }
+    Super+Shift+0 { move-column-to-workspace 10; }
+
+    // ===== Column Boundaries =====
+    Super+Home      { focus-column-first; }
+    Super+End       { focus-column-last; }
+    Super+Ctrl+Home { move-column-to-first; }
+    Super+Ctrl+End  { move-column-to-last; }
+    // ===== Column Manipulation =====
+    Super+BracketLeft  { consume-or-expel-window-left; }
+    Super+BracketRight { consume-or-expel-window-right; }
+    Super+Comma        { consume-window-into-column; }
+    Super+Period       { expel-window-from-column; }
+    Super+w            { toggle-column-tabbed-display; }
+    // ===== Column Width Presets =====
+    Super+r            { switch-preset-column-width; }
+    Super+Shift+r      { switch-preset-window-height; }
+    // ===== Manual Resizing =====
+    Super+Minus       { set-column-width "-5%"; }
+    Super+Equal       { set-column-width "+5%"; }
+    Super+Shift+Minus { set-window-height "-5%"; }
+    Super+Shift+Equal { set-window-height "+5%"; }
+    // ===== Layout Adjustments =====
+    Super+c       { center-column; }
+    Super+Ctrl+C  { center-visible-columns; }
+    // ===== Media Keys =====
+    XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
+    XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute         allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute      allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set +10%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set 10%-"; }
     // ===== Additional Useful Bindings =====
-    Super+Shift+Slash {
-        show-hotkey-overlay
-    }
-    Super+Escape allow-inhibiting=false {
-        toggle-keyboard-shortcuts-inhibit
-    }
-}
-debug {
-    wait-for-frame-completion-before-queueing
+    Super+Shift+Slash                   { show-hotkey-overlay; }
+    Super+v      repeat=false           { toggle-overview; }
+    Super+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    Super+Shift+P                       { power-off-monitors; }
 }
 

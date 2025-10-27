@@ -66,10 +66,10 @@ return {
 		serverOpts["ts_ls"] = {
 			-- filetypes = tsserver_filetypes, -- VUE SPECIFIC
 			init_options = {
-				preferences = {
-					importModuleSpecifierPreference = "non-relative",
-					importModuleSpecifierEnding = "js",
-				},
+				-- preferences = {
+				-- 	importModuleSpecifierPreference = "non-relative",
+				-- 	importModuleSpecifierEnding = "js",
+				-- },
 				-- plugins = { -- VUE SPECIFIC
 				-- 	vue_plugin,
 				-- },

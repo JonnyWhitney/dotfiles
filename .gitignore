@@ -14,6 +14,7 @@
 .config/Code/
 .config/HKModInstaller/
 .config/QtProject.conf
+.config/Vial
 .config/chromium/
 .config/claude/
 .config/dconf/
