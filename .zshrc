@@ -47,7 +47,7 @@ alias z='zellij'
 alias nnvim="cd ~/.config/nvim && nvim"
 alias nhypr="cd ~/.config/hypr && nvim"
 
-alias update-pms='go-global-update; cargo install-update --all; bun update -g --all'
+alias update-pms='go-global-update; cargo install-update --all; bun update -g --all --latest'
 
 # shellcheck disable=SC1090
 source <(fzf --zsh)

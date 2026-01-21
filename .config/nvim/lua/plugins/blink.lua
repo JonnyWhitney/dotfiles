@@ -1,3 +1,5 @@
+local lazy_dirs = vim.fn.glob("~/.local/share/nvim/lazy/*", true, true)
+
 return {
 	"saghen/blink.cmp",
 	event = "VeryLazy",
@@ -6,9 +8,13 @@ return {
 		{
 			"folke/lazydev.nvim",
 			ft = "lua",
+
+			---@class lazydev.Config
 			opts = {
-				library = {
-					{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+				library = lazy_dirs,
+				integrations = {
+					cmp = false,
+					blink = true,
 				},
 			},
 		},
@@ -21,19 +27,9 @@ return {
 				"path",
 				"buffer",
 				"lazydev",
-				-- "minuet",
 			},
 			providers = {
 				lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
-				-- minuet = {
-				-- 	name = "minuet",
-				-- 	module = "minuet.blink",
-				-- 	async = true,
-				-- 	-- Should match minuet.config.request_timeout * 1000,
-				-- 	-- since minuet.config.request_timeout is in seconds
-				-- 	timeout_ms = 3000,
-				-- 	score_offset = 50, -- Gives minuet higher priority among suggestions
-				-- },
 			},
 			per_filetype = {
 				minifiles = { inherit_defaults = false },

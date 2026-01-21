@@ -15,8 +15,10 @@ return {
 		-- Configure server opts
 		local serverOpts = {}
 		serverOpts["bashls"] = { filetypes = { "bash", "sh", "zsh" } }
-		serverOpts["biome"] = { filetypes = { "javascript", "typescript", "typescriptreact", "css", "html" } }
+		-- serverOpts["biome"] = { filetypes = { "javascript", "typescript", "typescriptreact", "css", "html" } }
+		serverOpts["buf_ls"] = {}
 		serverOpts["cssls"] = { filetypes = { "css" } }
+		serverOpts["eslint"] = { filetypes = { "css", "typescript" } }
 		serverOpts["gopls"] = {
 			settings = {
 				gopls = {
@@ -46,40 +48,11 @@ return {
 				require("sqls").on_attach(client, bufnr)
 			end,
 		}
-		serverOpts["systemd_ls"] = {
-			name = "systemd_ls",
-			cmd = { "/home/jonny/.cargo/bin/systemd-lsp" },
-			root_dir = vim.fn.getcwd(),
-		}
-		-- serverOpts["tailwindcss"] = {
-		-- 	filetypes = { "html", "javascriptreact", "templ", "typescriptreact" },
-		-- 	init_options = { userLanguages = { templ = "html" } },
-		-- }
-		-- -- VUE SPECIFIC
-		-- local tsserver_filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
-		-- local vue_plugin = {
-		-- 	name = "@vue/typescript-plugin",
-		-- 	location = "/home/jonny/.bun/bin/vue-language-server",
-		-- 	languages = { "vue" },
-		-- 	configNamespace = "typescript",
-		-- }
-		serverOpts["ts_ls"] = {
-			-- filetypes = tsserver_filetypes, -- VUE SPECIFIC
-			init_options = {
-				-- preferences = {
-				-- 	importModuleSpecifierPreference = "non-relative",
-				-- 	importModuleSpecifierEnding = "js",
-				-- },
-				-- plugins = { -- VUE SPECIFIC
-				-- 	vue_plugin,
-				-- },
-			},
-		}
-
-		-- serverOpts["vue_ls"] = {} -- VUE SPECIFIC
-
+		serverOpts["systemd_lsp"] = {}
+		serverOpts["ts_ls"] = {}
 		serverOpts["templ"] = {}
 		serverOpts["taplo"] = {}
+		serverOpts["ty"] = {}
 		serverOpts["qmlls"] = { cmd = { "qmlls6" } }
 		serverOpts["yamlls"] = {}
 

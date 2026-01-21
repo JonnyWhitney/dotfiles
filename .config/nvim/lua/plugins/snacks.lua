@@ -7,12 +7,12 @@ return {
 		words = { enabled = true },
 		---@type snacks.picker.Config
 		picker = {
-			-- previewers = {
-			-- 	diff = {
-			-- 		cmd = { "delta" },
-			-- 		builtin = false,
-			-- 	},
-			-- },
+			previewers = {
+				diff = {
+					cmd = { "delta" },
+					builtin = false,
+				},
+			},
 			layouts = {
 				default = {
 					layout = {
@@ -68,6 +68,13 @@ return {
 				require("snacks").picker.grep()
 			end,
 			desc = "Grep",
+		},
+		{
+			"<leader>fe",
+			function()
+				require("snacks").picker.explorer()
+			end,
+			desc = "File Explorer",
 		},
 		-- search neovim
 		{
@@ -149,24 +156,17 @@ return {
 			desc = "Git Diff",
 		},
 		{
-			"<leader>fe",
+			"<leader>gD",
 			function()
-				require("snacks").picker.explorer()
+				require("snacks").picker.git_diff(
+					--- @type snacks.picker.git.Config
+					{
+						cmd_args = { "--staged" },
+					}
+				)
 			end,
 			desc = "Git Diff",
 		},
-		-- {
-		-- 	"<leader>gD",
-		-- 	function()
-		-- 		require("snacks").picker.git_diff(
-		-- 			--- @type snacks.picker.git.Config
-		-- 			{
-		-- 				args = { "--staged" },
-		-- 			}
-		-- 		)
-		-- 	end,
-		-- 	desc = "Git Diff",
-		-- },
 		-- LSP
 		{
 			"gd",

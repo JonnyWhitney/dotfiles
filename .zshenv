@@ -30,8 +30,6 @@ export FZF_DEFAULT_OPTS="\
     --preview='cat {+}' \
 "
 
-source "/home/jonny/.env"
-
 ## Package manager paths
 # Luarocks path
 eval "$(luarocks path --bin)"

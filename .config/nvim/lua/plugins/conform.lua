@@ -15,11 +15,10 @@ return {
 
 			lua = { "stylua" },
 
-			css = { "biome", "stylelint" },
-			javascript = { "biome" },
-			typescript = { "biome" },
-
-			html = { "biome" },
+			typescript = { "prettier" },
+			html = { "prettier" },
+			css = { "prettier" },
+			-- javascript = { "biome" },
 
 			bash = { "shfmt" },
 			sh = { "shfmt" },
@@ -36,7 +35,7 @@ return {
 			if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
 				return
 			end
-			return { timeout_ms = 500, async = false, lsp_format = "fallback" }
+			return { timeout_ms = 1000, async = false, lsp_format = "fallback" }
 		end,
 		formatters = {
 			sql_formatter = {

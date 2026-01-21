@@ -21,7 +21,9 @@ vim.o.cursorline = true
 vim.o.scrolloff = 5
 vim.o.sidescrolloff = 5
 
-vim.opt_global.listchars = { tab = "» ", space = "·", nbsp = "␣" }
+vim.o.exrc = true
+
+-- vim.opt_global.listchars = { tab = "» ", space = "·", nbsp = "␣" }
 
 vim.o.undofile = true
 vim.o.swapfile = false
