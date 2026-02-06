@@ -82,10 +82,6 @@ fh() {
 }
 alias fzc='fzf | wl-copy'
 
-alias sshCRMExtended='ssh apps@192.168.0.152'
-alias sshCRMStaging='ssh apps@192.168.0.45'
-alias sshCarson-Retailer-Dashboard='ssh apps@192.168.0.118'
-
 # NVM
 # source /usr/share/nvm/init-nvm.sh
 

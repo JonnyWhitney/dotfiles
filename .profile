@@ -1,1 +1,0 @@
-export PSTEST_PROFILE_LOAD='b7fbed02-6d09-43dc-b3a3-5537163ce707'
