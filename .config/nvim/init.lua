@@ -117,5 +117,7 @@ vim.filetype.add({
 		nspawn = "systemd",
 		target = "systemd",
 		timer = "systemd",
+
+		cshtml = "razor",
 	},
 })

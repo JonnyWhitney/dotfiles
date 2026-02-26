@@ -8,6 +8,7 @@ return {
 			"bash",
 			"caddy",
 			"comment",
+			"c_sharp",
 			"css",
 			-- "csv", Just Use Plugin
 			"desktop",
@@ -28,6 +29,7 @@ return {
 			"json5",
 			"jsx",
 			"kdl",
+			"liquid",
 			"lua",
 			"luadoc",
 			"markdown",
@@ -37,6 +39,7 @@ return {
 			"proto",
 			"query",
 			"qmljs",
+			"razor",
 			"regex",
 			"rust",
 			"scheme",

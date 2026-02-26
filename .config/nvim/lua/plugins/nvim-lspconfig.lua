@@ -43,6 +43,7 @@ return {
 		serverOpts["lua_ls"] = {}
 		serverOpts["marksman"] = {}
 		serverOpts["rust_analyzer"] = {}
+		serverOpts["shopify_theme_ls"] = {}
 		serverOpts["sqls"] = {
 			on_attach = function(client, bufnr)
 				require("sqls").on_attach(client, bufnr)

@@ -24,6 +24,7 @@ return {
 			default = {
 				-- Paths
 				"lsp",
+				"omni",
 				"path",
 				"buffer",
 				"lazydev",

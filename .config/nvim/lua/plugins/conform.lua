@@ -19,6 +19,7 @@ return {
 			html = { "prettier" },
 			css = { "prettier" },
 			-- javascript = { "biome" },
+			liquid = { "prettier" },
 
 			bash = { "shfmt" },
 			sh = { "shfmt" },
@@ -27,6 +28,8 @@ return {
 			sql = { "sql_formatter" },
 
 			templ = { "templ" },
+
+			python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
 
 			-- kdl = { "kdlfmt" },
 		},
