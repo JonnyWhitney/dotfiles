@@ -54,6 +54,5 @@ fi
 if [[ ":$PATH:" != *":$HOME/.dotnet/tools"* ]]; then
     export PATH="$PATH:$HOME/.dotnet/tools"
 fi
-
 # uv install location
 export PATH="$PATH:/home/jonny/.local/bin"
