@@ -124,22 +124,17 @@ enter = 'mode main'
 # Monitor workspace assignment
 # ---------------------------------------------------------------------------
 [workspace-to-monitor-force-assignment]
-# laptop
+# Laptop
 1 = 'built-in'
 2 = 'built-in'
 3 = 'built-in'
 4 = 'built-in'
 
-# Work Center
-5 = [ 2, 'built-in' ]
-6 = [ 2, 'built-in' ]
-7 = [ 2, 'built-in' ]
-8 = [ 2, 'built-in' ]
-# Home Main
-# 5 = [ 1, 'built-in' ]
-# 6 = [ 1, 'built-in' ]
-# 7 = [ 1, 'built-in' ]
-# 8 = [ 1, 'built-in' ]
+# Ultrawide 
+5 = [ 1, 'built-in' ]
+6 = [ 1, 'built-in' ]
+7 = [ 1, 'built-in' ]
+8 = [ 1, 'built-in' ]
 
 # Work Leftmost
 9 =  [1, 'built-in']
