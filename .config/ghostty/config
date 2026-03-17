@@ -15,7 +15,7 @@ keybind = ctrl+comma=open_config
 keybind = ctrl+shift+comma=reload_config
 keybind = ctrl+shift+i=inspector:toggle
 keybind = ctrl+enter=toggle_fullscreen
-keybind = ctrl+shift+q=quit
+keybind = super+q=quit
 # Keybinds: Clipboard
 keybind = ctrl+shift+c=copy_to_clipboard
 keybind = ctrl+insert=copy_to_clipboard
