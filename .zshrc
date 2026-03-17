@@ -41,7 +41,7 @@ alias l-s='hyprlock -c ~/.config/hypr/hyprlock-server.conf'
 alias l-l='hyprlock -c ~/.config/hypr/hyprlock-lunch.conf'
 alias ls='lsd -Fv --group-directories-first'
 alias n='nvim'
-alias tm='trash-put'
+alias tm='trash'
 alias z='zellij'
 
 alias nnvim="cd ~/.config/nvim && nvim"
@@ -96,3 +96,11 @@ eval "$(mise activate zsh)"
 
 #Load Newt Colors
 export NEWT_COLORS_FILE="$HOME/.config/newt/tokyo-night.cfg"
+
+# Source Rustup on Mac
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+
+# Source nvm on Mac
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"

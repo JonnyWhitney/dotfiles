@@ -1,7 +1,6 @@
-export TERM=foot
+export TERM=ghostty
 export VISUAL=nvim
 export EDITOR=nvim
-export BROWSER=/usr/share/applications/firefox-nightly.desktop
 export MANPAGER='nvim +Man!'
 export FZF_DEFAULT_COMMAND='fd -H'
 export FZF_DEFAULT_OPTS="\
@@ -31,6 +30,8 @@ export FZF_DEFAULT_OPTS="\
 "
 
 ## Package manager paths
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # Luarocks path
 eval "$(luarocks path --bin)"
 if [[ ":$PATH:" != *":$HOME/.luarocks/bin"* ]]; then
