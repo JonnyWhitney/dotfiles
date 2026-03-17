@@ -325,7 +325,7 @@ ui {
 }
 theme "main"
 scroll_buffer_size 1000000
-copy_command "wl-copy"
+copy_command "pbcopy"
 show_startup_tips false
 stacked_resize false
 mouse_mode true
