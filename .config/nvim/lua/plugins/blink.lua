@@ -1,5 +1,6 @@
 local lazy_dirs = vim.fn.glob("~/.local/share/nvim/lazy/*", true, true)
 
+---@type LazyPluginSpec
 return {
 	"saghen/blink.cmp",
 	event = "VeryLazy",

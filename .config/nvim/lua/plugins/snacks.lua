@@ -1,7 +1,9 @@
+---@type LazyPluginSpec
 return {
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
+	---@type snacks.picker.Config
 	opts = {
 		quickfile = { enabled = true },
 		words = { enabled = true },
@@ -39,15 +41,14 @@ return {
 		{
 			"<leader>ff",
 			function()
-				require("snacks").picker.files({ cmd = "fd" })
+				Snacks.picker.files({ cmd = "fd" })
 			end,
 			desc = "Find Files",
 		},
 		{
 			"<leader>fF",
 			function()
-				---@diagnostic disable-next-line: missing-fields
-				require("snacks").picker.files({
+				Snacks.picker.files({
 					cmd = "fd",
 					hidden = true,
 					ignored = true,
@@ -58,28 +59,28 @@ return {
 		{
 			"<leader>fg",
 			function()
-				require("snacks").picker.lines()
+				Snacks.picker.lines()
 			end,
 			desc = "Buffer Lines",
 		},
 		{
 			"<leader>fG",
 			function()
-				require("snacks").picker.grep()
+				Snacks.picker.grep()
 			end,
 			desc = "Grep",
 		},
 		{
 			"<leader>fe",
 			function()
-				require("snacks").picker.explorer()
+				Snacks.picker.explorer()
 			end,
 			desc = "File Explorer",
 		},
 		{
 			"<leader>fb",
 			function()
-				require("snacks").picker.buffers()
+				Snacks.picker.buffers()
 			end,
 			desc = "Buffers",
 		},
@@ -87,90 +88,57 @@ return {
 		{
 			'<leader>f"',
 			function()
-				require("snacks").picker.registers()
+				Snacks.picker.registers()
 			end,
 			desc = "Registers",
 		},
 		{
 			"<leader>fm",
 			function()
-				require("snacks").picker.marks()
+				Snacks.picker.marks({ global = false })
 			end,
-			desc = "Marks",
+			desc = "Local Marks",
 		},
 		{
-			"<leader>fc",
+			"<leader>fM",
 			function()
-				require("snacks").picker.command_history()
+				Snacks.picker.marks({ ["local"] = false })
 			end,
-			desc = "Command History",
-		},
-		{
-			"<leader>fC",
-			function()
-				require("snacks").picker.commands()
-			end,
-			desc = "Commands",
-		},
-		{
-			"<leader>fk",
-			function()
-				require("snacks").picker.keymaps()
-			end,
-			desc = "Keymaps",
+			desc = "Global Marks",
 		},
 		{
 			"<leader>fp",
 			function()
-				require("snacks").picker.pickers()
+				Snacks.picker.pickers()
 			end,
 			desc = "Pickers",
 		},
 		{
 			"<leader>fh",
 			function()
-				require("snacks").picker.help()
+				Snacks.picker.help()
 			end,
 			desc = "Help Pages",
-		},
-		{
-			"<leader>fM",
-			function()
-				require("snacks").picker.man()
-			end,
-			desc = "Man Pages",
 		},
 		-- git
 		{
 			"<leader>gl",
 			function()
-				require("snacks").picker.git_log()
+				Snacks.picker.git_log()
 			end,
 			desc = "Git Log",
 		},
 		{
 			"<leader>gs",
 			function()
-				require("snacks").picker.git_status()
+				Snacks.picker.git_status()
 			end,
 			desc = "Git Status",
 		},
 		{
 			"<leader>gd",
 			function()
-				require("snacks").picker.git_diff()
-			end,
-			desc = "Git Diff",
-		},
-		{
-			"<leader>gD",
-			function()
-				require("snacks").picker.git_diff(
-					--- @type snacks.picker.git.Config
-					{
-						cmd_args = { "--staged" },
-					}
-				)
+				Snacks.picker.git_diff()
 			end,
 			desc = "Git Diff",
 		},
@@ -178,14 +146,14 @@ return {
 		{
 			"gd",
 			function()
-				require("snacks").picker.lsp_definitions()
+				Snacks.picker.lsp_definitions()
 			end,
 			desc = "Goto Definition",
 		},
 		{
 			"grr",
 			function()
-				require("snacks").picker.lsp_references()
+				Snacks.picker.lsp_references()
 			end,
 			nowait = true,
 			desc = "References",
@@ -193,7 +161,7 @@ return {
 		{
 			"gri",
 			function()
-				require("snacks").picker.lsp_implementations()
+				Snacks.picker.lsp_implementations()
 			end,
 			nowait = true,
 			desc = "Implementations",
@@ -201,21 +169,21 @@ return {
 		{
 			"KT",
 			function()
-				require("snacks").picker.lsp_type_definitions()
+				Snacks.picker.lsp_type_definitions()
 			end,
 			desc = "Goto T[y]pe Definition",
 		},
 		{
 			"Ks",
 			function()
-				require("snacks").picker.lsp_symbols()
+				Snacks.picker.lsp_symbols()
 			end,
 			desc = "LSP Symbols",
 		},
 		{
 			"KD",
 			function()
-				require("snacks").picker.diagnostics()
+				Snacks.picker.diagnostics()
 			end,
 			desc = "Diagnostics",
 		},
