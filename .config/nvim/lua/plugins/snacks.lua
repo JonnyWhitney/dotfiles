@@ -76,6 +76,13 @@ return {
 			end,
 			desc = "File Explorer",
 		},
+		{
+			"<leader>fb",
+			function()
+				require("snacks").picker.buffers()
+			end,
+			desc = "Buffers",
+		},
 		-- search neovim
 		{
 			'<leader>f"',
