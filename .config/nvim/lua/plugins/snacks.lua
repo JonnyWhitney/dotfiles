@@ -33,6 +33,29 @@ return {
 					},
 				},
 			},
+			actions = {
+				-- Map a key to load all selected files as background buffers
+				load_as_buffers = function(picker)
+					local items = picker:selected({ fallback = true })
+					picker:close()
+					for _, item in ipairs(items) do
+						if item.file then
+							vim.cmd.badd(item.file)
+						end
+					end
+				end,
+			},
+			win = {
+				input = {
+					keys = {
+						["<C-o>"] = {
+							"load_as_buffers",
+							mode = { "i", "n" },
+							desc = "Open files as background buffers",
+						},
+					},
+				},
+			},
 		},
 	},
 	keys = {
