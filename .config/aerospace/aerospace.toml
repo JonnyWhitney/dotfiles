@@ -49,10 +49,10 @@ ctrl-cmd-alt-k = 'focus up'
 ctrl-cmd-alt-l = 'focus right --boundaries all-monitors-outer-frame'
 
 # Move windows 
-ctrl-cmd-alt-shift-h = 'move left --boundaries all-monitors-outer-frame'
-ctrl-cmd-alt-shift-l = 'move right --boundaries all-monitors-outer-frame'
-ctrl-cmd-alt-shift-j = 'move down'
-ctrl-cmd-alt-shift-k = 'move up'
+ctrl-cmd-alt-shift-h = 'exec-and-forget aerospace swap left || aerospace move left --boundaries all-monitors-outer-frame'
+ctrl-cmd-alt-shift-l = 'exec-and-forget aerospace swap right || aerospace move right --boundaries all-monitors-outer-frame'
+ctrl-cmd-alt-shift-j = 'exec-and-forget aerospace swap down || aerospace move down --boundaries all-monitors-outer-frame'
+ctrl-cmd-alt-shift-k = 'exec-and-forget aerospace swap up || aerospace move up --boundaries all-monitors-outer-frame'
 
 # Close window
 ctrl-cmd-alt-shift-y = 'close'
@@ -68,9 +68,6 @@ ctrl-cmd-alt-o = 'layout floating tiling'
 # master orientation.
 ctrl-cmd-alt-slash = 'layout tiles horizontal vertical'
 ctrl-cmd-alt-semicolon = 'layout accordion horizontal vertical'
-
-# Balance window sizes (useful after manual resizing)
-ctrl-cmd-alt-shift-equal = 'balance-sizes'
 
 # ---------------------------------------------------------------------------
 # Workspaces
