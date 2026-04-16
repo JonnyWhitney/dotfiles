@@ -22,8 +22,8 @@ exec-on-workspace-change = [
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
-on-focus-changed = ['move-mouse window-lazy-center']
-on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focus-changed = []
+on-focused-monitor-changed = []
 
 default-root-container-layout = 'tiles'
 default-root-container-orientation = 'auto'
@@ -43,16 +43,16 @@ outer.bottom     = 10
 [mode.main.binding]
 
 # Focus
-ctrl-cmd-alt-h = 'focus left --boundaries all-monitors-outer-frame'
-ctrl-cmd-alt-j = 'focus down'
-ctrl-cmd-alt-k = 'focus up'
-ctrl-cmd-alt-l = 'focus right --boundaries all-monitors-outer-frame'
+ctrl-cmd-alt-h = ['focus left --boundaries all-monitors-outer-frame', 'move-mouse window-lazy-center']
+ctrl-cmd-alt-j = ['focus down', 'move-mouse window-lazy-center']
+ctrl-cmd-alt-k = ['focus up', 'move-mouse window-lazy-center']
+ctrl-cmd-alt-l = ['focus right --boundaries all-monitors-outer-frame', 'move-mouse window-lazy-center']
 
 # Move windows 
-ctrl-cmd-alt-shift-h = 'exec-and-forget aerospace swap left || aerospace move left --boundaries all-monitors-outer-frame'
-ctrl-cmd-alt-shift-l = 'exec-and-forget aerospace swap right || aerospace move right --boundaries all-monitors-outer-frame'
-ctrl-cmd-alt-shift-j = 'exec-and-forget aerospace swap down || aerospace move down --boundaries all-monitors-outer-frame'
-ctrl-cmd-alt-shift-k = 'exec-and-forget aerospace swap up || aerospace move up --boundaries all-monitors-outer-frame'
+ctrl-cmd-alt-shift-h = 'exec-and-forget aerospace swap left || aerospace move left --boundaries all-monitors-outer-frame; aerospace move-mouse window-lazy-center'
+ctrl-cmd-alt-shift-l = 'exec-and-forget aerospace swap right || aerospace move right --boundaries all-monitors-outer-frame; aerospace move-mouse window-lazy-center'
+ctrl-cmd-alt-shift-j = 'exec-and-forget aerospace swap down || aerospace move down --boundaries all-monitors-outer-frame; aerospace move-mouse window-lazy-center'
+ctrl-cmd-alt-shift-k = 'exec-and-forget aerospace swap up || aerospace move up --boundaries all-monitors-outer-frame; aerospace move-mouse window-lazy-center'
 
 # Close window
 ctrl-cmd-alt-shift-y = 'close'
