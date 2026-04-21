@@ -8,7 +8,7 @@ persistent-workspaces = []
 # Bootstrap janky boarders
 after-startup-command = [
     # Jankyboarders
-    'exec-and-forget borders active_color=0xff00ffff inactive_color=0xff888888 width=6',
+    'exec-and-forget borders active_color=0xff00ffff inactive_color=0xff888888 width=8',
     # Sketchybar
     'exec-and-forget sketchybar',
 ]
@@ -30,12 +30,12 @@ default-root-container-orientation = 'auto'
 
 # Gaps
 [gaps]
-inner.horizontal = 10
-inner.vertical   = 10
-outer.left       = 10
-outer.right      = 10
-outer.top        = [ {monitor.built-in = 14}, 42 ]
-outer.bottom     = 10
+inner.horizontal = 14
+inner.vertical   = 14
+outer.left       = 14
+outer.right      = 14
+outer.top        = [ {monitor.built-in = 18}, 42 ]
+outer.bottom     = 14
 
 # ---------------------------------------------------------------------------
 # Main mode — default keybindings
