@@ -1,7 +1,7 @@
 # Appearance
 theme = tokyonight
 font-family = CommitMono Nerd Font Mono
-font-size = 12.25
+font-size = 13.25
 
 # Window
 window-padding-x = 2
@@ -15,7 +15,7 @@ keybind = ctrl+comma=open_config
 keybind = ctrl+shift+comma=reload_config
 keybind = ctrl+shift+i=inspector:toggle
 keybind = ctrl+enter=toggle_fullscreen
-keybind = ctrl+shift+q=quit
+keybind = super+q=quit
 # Keybinds: Clipboard
 keybind = ctrl+shift+c=copy_to_clipboard
 keybind = ctrl+insert=copy_to_clipboard
@@ -27,3 +27,5 @@ keybind = ctrl+plus=increase_font_size:1
 keybind = ctrl+equal=increase_font_size:1
 keybind = ctrl+minus=decrease_font_size:1
 keybind = ctrl+zero=reset_font_size
+
+background-opacity = 1.00

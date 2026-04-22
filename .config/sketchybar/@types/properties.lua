@@ -1,0 +1,126 @@
+---@meta
+
+---@class TextProperties
+---@field string? string The text content to display
+---@field color? ArgbHex Text foreground color in ARGB hex. (default: 0xffffffff)
+---@field highlight_color? ArgbHex Color used when `highlight` is true. (default: 0xff000000)
+---@field highlight? boolean Use `highlight_color` instead of `color`. (default: false)
+---@field font? string Full font spec as "Family:Style:Size". (default: "Hack Nerd Font:Bold:14.0")
+---@field font_family? string Font family name. (default: "Hack Nerd Font")
+---@field font_style? string Font style name. (default: "Bold")
+---@field font_size? number Font size in points. (default: 14.0)
+---@field padding_left? integer Pixels of padding left of the text. (default: 0)
+---@field padding_right? integer Pixels of padding right of the text. (default: 0)
+---@field y_offset? integer Vertical pixel offset applied to the text. (default: 0)
+---@field width? integer | "dynamic" Fixed width in points, or "dynamic". (default: "dynamic")
+---@field align? TextAlign Text alignment inside its container. (default: "left")
+---@field drawing? boolean Whether the text is rendered. (default: true)
+---@field scroll_duration? integer Scroll speed in ms for text truncated by max_chars. (default: 100)
+---@field max_chars? integer Maximum characters before truncation/scroll; 0 = unlimited. (default: 0)
+
+---@class BackgroundProperties
+---@field drawing? boolean Whether the background is rendered. (default: false)
+---@field color? ArgbHex Fill color in ARGB hex. (default: 0x00000000)
+---@field border_color? ArgbHex Border color in ARGB hex. (default: 0x00000000)
+---@field border_width? integer Border thickness in pixels. (default: 0)
+---@field height? integer Override background height in pixels; 0 = bar height. (default: 0)
+---@field corner_radius? integer Corner radius in pixels. (default: 0)
+---@field padding_left? integer Pixels of padding left of the background. (default: 0)
+---@field padding_right? integer Pixels of padding right of the background. (default: 0)
+---@field y_offset? integer Vertical pixel offset. (default: 0)
+---@field x_offset? integer Horizontal pixel offset. (default: 0)
+---@field clip? number Fraction by which the background clips the bar (0.0–1.0). (default: 0.0)
+---@field image? string | ImageProperties Path, app reference, or `media.artwork` for background image
+
+---@class ImageProperties
+---@field drawing? boolean Whether the image is rendered. (default: false)
+---@field string? string File path, app bundle ID, or `media.artwork`
+---@field scale? number Scale factor applied to the image. (default: 1.0)
+---@field border_color? ArgbHex Image border color in ARGB hex. (default: 0x00000000)
+---@field border_width? integer Image border thickness in pixels. (default: 0)
+---@field corner_radius? integer Image corner radius in pixels. (default: 0)
+---@field padding_left? integer Pixels of padding left of the image. (default: 0)
+---@field padding_right? integer Pixels of padding right of the image. (default: 0)
+---@field y_offset? integer Vertical pixel offset applied to the image. (default: 0)
+
+---@class ShadowProperties
+---@field drawing? boolean Whether the shadow is drawn. (default: false)
+---@field color? ArgbHex Shadow color in ARGB hex. (default: 0xff000000)
+---@field angle? integer Shadow angle in degrees. (default: 30)
+---@field distance? integer Shadow distance in pixels. (default: 5)
+
+---@class BarProperties
+---@field color? ArgbHex Bar background color in ARGB hex. (default: 0x44000000)
+---@field border_color? ArgbHex Bar border color in ARGB hex. (default: 0xffff0000)
+---@field position? BarPosition Screen edge the bar is placed on. (default: "top")
+---@field height? integer Bar height in pixels. (default: 25)
+---@field notch_display_height? integer Override bar height on notched displays; 0 = use `height`. (default: 0)
+---@field margin? integer Margin around the bar in pixels. (default: 0)
+---@field y_offset? integer Vertical offset from the screen edge. (default: 0)
+---@field corner_radius? integer Bar corner radius in pixels. (default: 0)
+---@field border_width? integer Bar border thickness in pixels. (default: 0)
+---@field blur_radius? integer Background blur radius in pixels. (default: 0)
+---@field padding_left? integer Padding between left bar edge and leftmost item. (default: 0)
+---@field padding_right? integer Padding between right bar edge and rightmost item. (default: 0)
+---@field notch_width? integer Reserved space for the display notch in pixels. (default: 200)
+---@field notch_offset? integer Additional y_offset applied on notched displays. (default: 0)
+---@field display? BarDisplay Which displays show the bar. (default: "all")
+---@field hidden? boolean Whether the bar is hidden. (default: false)
+---@field topmost? boolean | "window" Draw above all windows; "window" places above windows only. (default: false)
+---@field sticky? boolean Keep bar visible across Space changes. (default: true)
+---@field font_smoothing? boolean Enable font smoothing for text rendering. (default: false)
+---@field shadow? boolean | ShadowProperties Drop shadow for the bar. (default: false)
+
+---@class GraphProperties
+---@field color? ArgbHex Graph line color. (default: 0xffcccccc)
+---@field fill_color? ArgbHex Fill color beneath the graph line. (default: 0xffcccccc)
+---@field line_width? number Line thickness in points. (default: 0.5)
+
+---@class SliderProperties
+---@field percentage? integer Progress value 0–100. (default: 0)
+---@field highlight_color? ArgbHex Color of the filled progress region. (default: 0xff0000ff)
+---@field knob? string Symbol used as the slider knob.
+
+---@class AliasProperties
+---@field color? ArgbHex Override tint color for the mirrored menu-bar item.
+---@field scale? number Scale factor applied to the alias image. (default: 1.0)
+---@field update_freq? integer Seconds between alias refreshes. (default: 1)
+
+---@class PopupProperties
+---@field drawing? boolean Whether the popup is visible. (default: false)
+---@field horizontal? boolean Lay popup items out horizontally. (default: false)
+---@field topmost? boolean Draw popup above all other windows. (default: true)
+---@field height? integer Vertical spacing between popup items in pixels. (default: bar height)
+---@field blur_radius? integer Blur radius for the popup background. (default: 0)
+---@field y_offset? integer Vertical offset of the popup from the bar. (default: 0)
+---@field align? "left" | "center" | "right" Popup alignment relative to parent item. (default: "left")
+---@field background? BackgroundProperties Background styling for the popup window.
+
+---@class ItemProperties
+---@field drawing? boolean Whether the item is rendered. (default: true)
+---@field position? ItemPosition | string Bar region ("left"/"right"/"center") or "popup.<name>" for popup items
+---@field space? integer | string Mission Control space(s) this item appears on; 0 = all. (default: 0)
+---@field display? BarDisplay Display(s) this item appears on; 0 = all. (default: 0)
+---@field ignore_association? boolean Ignore space/display associations. (default: false)
+---@field y_offset? integer Vertical pixel offset for the item. (default: 0)
+---@field padding_left? integer Pixels of padding left of the item. (default: 0)
+---@field padding_right? integer Pixels of padding right of the item. (default: 0)
+---@field width? integer | "dynamic" Fixed item width in points, or "dynamic". (default: "dynamic")
+---@field scroll_texts? boolean Auto-scroll all text fields that exceed max_chars. (default: false)
+---@field blur_radius? integer Blur radius applied to the item background. (default: 0)
+---@field update_freq? integer Seconds between periodic script executions; 0 = never. (default: 0)
+---@field updates? boolean | "when_shown" When to run the script: always, never, or only when visible. (default: true)
+---@field script? string Path or inline shell script executed on subscribed events
+---@field click_script? string Path or inline shell script executed on mouse click
+---@field mach_helper? string Mach port helper name for direct kernel-level event delivery
+---@field icon? TextProperties | string Icon text content or full TextProperties table
+---@field label? TextProperties | string Label text content or full TextProperties table
+---@field background? BackgroundProperties Item background styling
+---@field image? ImageProperties | string Image path/reference or full ImageProperties table
+---@field shadow? ShadowProperties Drop shadow for this item
+---@field popup? PopupProperties         Popup menu anchored to this item
+---@field graph? GraphProperties         Graph appearance (for "graph" type items)
+---@field slider? SliderProperties       Slider appearance (for "slider" type items)
+---@field alias? AliasProperties         Alias appearance (for "alias" type items)
+
+---@alias DefaultProperties ItemProperties

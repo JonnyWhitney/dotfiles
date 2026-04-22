@@ -1,0 +1,138 @@
+config-version = 2
+
+start-at-login = true
+
+# In i3, all workspaces are phantom
+persistent-workspaces = []
+
+# Bootstrap janky boarders
+after-startup-command = [
+    # Jankyboarders
+    'exec-and-forget borders active_color=0xff00ffff inactive_color=0xff888888 width=8',
+    # Sketchybar
+    'exec-and-forget sketchybar',
+]
+
+exec-on-workspace-change = [
+    '/bin/bash',
+    '-c',
+    'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+]
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+on-focus-changed = []
+on-focused-monitor-changed = []
+
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# Gaps
+[gaps]
+inner.horizontal = 14
+inner.vertical   = 14
+outer.left       = 14
+outer.right      = 14
+outer.top        = [ {monitor.built-in = 18}, 42 ]
+outer.bottom     = 14
+
+# ---------------------------------------------------------------------------
+# Main mode — default keybindings
+# ---------------------------------------------------------------------------
+[mode.main.binding]
+
+# Focus
+ctrl-cmd-alt-h = ['focus left --boundaries all-monitors-outer-frame', 'move-mouse window-lazy-center']
+ctrl-cmd-alt-j = ['focus down', 'move-mouse window-lazy-center']
+ctrl-cmd-alt-k = ['focus up', 'move-mouse window-lazy-center']
+ctrl-cmd-alt-l = ['focus right --boundaries all-monitors-outer-frame', 'move-mouse window-lazy-center']
+
+# Move windows 
+ctrl-cmd-alt-shift-h = 'exec-and-forget aerospace swap left || aerospace move left --boundaries all-monitors-outer-frame; aerospace move-mouse window-lazy-center'
+ctrl-cmd-alt-shift-l = 'exec-and-forget aerospace swap right || aerospace move right --boundaries all-monitors-outer-frame; aerospace move-mouse window-lazy-center'
+ctrl-cmd-alt-shift-j = 'exec-and-forget aerospace swap down || aerospace move down --boundaries all-monitors-outer-frame; aerospace move-mouse window-lazy-center'
+ctrl-cmd-alt-shift-k = 'exec-and-forget aerospace swap up || aerospace move up --boundaries all-monitors-outer-frame; aerospace move-mouse window-lazy-center'
+
+# Close window
+ctrl-cmd-alt-shift-y = 'close'
+
+# Fullscreen 
+ctrl-cmd-alt-p = 'fullscreen'
+# Toggle floating 
+ctrl-cmd-alt-o = 'layout floating tiling'
+
+# Toggle tiling layout between horizontal/vertical tiles
+# Replaces Hyprland's Super+Alt+H/J/K/L orientation changes.
+# In AeroSpace's tree model, you control split direction rather than
+# master orientation.
+ctrl-cmd-alt-slash = 'layout tiles horizontal vertical'
+ctrl-cmd-alt-semicolon = 'layout accordion horizontal vertical'
+
+# ---------------------------------------------------------------------------
+# Workspaces
+# ---------------------------------------------------------------------------
+# Focus workspace
+ctrl-cmd-alt-1 = 'exec-and-forget ~/.config/aerospace/switch-or-summon.sh 1'
+ctrl-cmd-alt-2 = 'exec-and-forget ~/.config/aerospace/switch-or-summon.sh 2'
+ctrl-cmd-alt-3 = 'exec-and-forget ~/.config/aerospace/switch-or-summon.sh 3'
+ctrl-cmd-alt-4 = 'exec-and-forget ~/.config/aerospace/switch-or-summon.sh 4'
+ctrl-cmd-alt-5 = 'exec-and-forget ~/.config/aerospace/switch-or-summon.sh 5'
+ctrl-cmd-alt-6 = 'exec-and-forget ~/.config/aerospace/switch-or-summon.sh 6'
+ctrl-cmd-alt-7 = 'exec-and-forget ~/.config/aerospace/switch-or-summon.sh 7'
+ctrl-cmd-alt-8 = 'exec-and-forget ~/.config/aerospace/switch-or-summon.sh 8'
+ctrl-cmd-alt-9 = 'exec-and-forget ~/.config/aerospace/switch-or-summon.sh 9'
+ctrl-cmd-alt-0 = 'exec-and-forget ~/.config/aerospace/switch-or-summon.sh 10'
+
+# Move window to workspace
+ctrl-cmd-alt-shift-1 = 'exec-and-forget ~/.config/aerospace/move-or-summon.sh 1'
+ctrl-cmd-alt-shift-2 = 'exec-and-forget ~/.config/aerospace/move-or-summon.sh 2'
+ctrl-cmd-alt-shift-3 = 'exec-and-forget ~/.config/aerospace/move-or-summon.sh 3'
+ctrl-cmd-alt-shift-4 = 'exec-and-forget ~/.config/aerospace/move-or-summon.sh 4'
+ctrl-cmd-alt-shift-5 = 'exec-and-forget ~/.config/aerospace/move-or-summon.sh 5'
+ctrl-cmd-alt-shift-6 = 'exec-and-forget ~/.config/aerospace/move-or-summon.sh 6'
+ctrl-cmd-alt-shift-7 = 'exec-and-forget ~/.config/aerospace/move-or-summon.sh 7'
+ctrl-cmd-alt-shift-8 = 'exec-and-forget ~/.config/aerospace/move-or-summon.sh 8'
+ctrl-cmd-alt-shift-9 = 'exec-and-forget ~/.config/aerospace/move-or-summon.sh 9'
+ctrl-cmd-alt-shift-0 = 'exec-and-forget ~/.config/aerospace/move-or-summon.sh 10'
+
+
+# ---------------------------------------------------------------------------
+# Workspaces
+# ---------------------------------------------------------------------------
+# Enter resize mode
+ctrl-cmd-alt-r = 'mode resize'
+
+[mode.resize.binding]
+h = 'resize width -50'
+l = 'resize width +50'
+j = 'resize height +50'
+k = 'resize height -50'
+
+# No direct mfact equivalent in AeroSpace; balance is the closest approximation
+r = 'balance-sizes'
+
+# Exit resize mode
+ctrl-cmd-alt-r = 'mode main'
+esc = 'mode main'
+enter = 'mode main'
+
+# ---------------------------------------------------------------------------
+# Monitor workspace assignment
+# ---------------------------------------------------------------------------
+[workspace-to-monitor-force-assignment]
+# Laptop
+1 = 'built-in'
+2 = 'built-in'
+3 = 'built-in'
+4 = 'built-in'
+
+# Ultrawide 
+5 = [ 1, 'built-in' ]
+6 = [ 1, 'built-in' ]
+7 = [ 1, 'built-in' ]
+8 = [ 1, 'built-in' ]
+
+# Work Leftmost
+9 =  [1, 'built-in']
+10 = [1, 'built-in']
