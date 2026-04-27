@@ -49,6 +49,8 @@ alias nhypr="cd ~/.config/hypr && nvim"
 
 alias update-pms='go-global-update; cargo install-update --all; bun update -g --all --latest'
 
+alias rebuild-hyprland="~/.config/scripts/rebuild-hyprland.sh"
+
 # shellcheck disable=SC1090
 source <(fzf --zsh)
 f() {
