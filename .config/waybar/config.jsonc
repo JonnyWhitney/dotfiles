@@ -84,7 +84,7 @@
         "format-alt": "{icon} {time}"
     },
     "network": {
-        "interface": "enp86*",
+        "interface": "enp0*",
         "format": "󰈀 {ipaddr}/{cidr}",
         "format-disconnected": "",
         "tooltip-format": "{ifname}",

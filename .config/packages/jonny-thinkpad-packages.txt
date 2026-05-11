@@ -7,9 +7,14 @@ bash-language-server
 bat
 bolt
 bottom
+brightnessctl
 btrfs-progs
+bun
 chromium
+claude-code
 cliphist
+cups
+cups-browsed
 discord-canary
 dolphin-emu
 downgrade
@@ -53,12 +58,14 @@ nemo
 nemo-fileroller
 neovim-git
 networkmanager
+nmap
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 nvidia-open
 nvidia-settings
 nvidia-utils
+obs-studio
 openssh
 otf-commit-mono-nerd
 pacutils
@@ -72,6 +79,7 @@ power-profiles-daemon
 protontricks
 qbittorrent
 qt5-wayland
+quickshell
 ripgrep
 rustup
 satty
@@ -104,6 +112,7 @@ visual-studio-code-bin
 vscode-langservers-extracted
 walker
 waybar
+wayle-bin
 wget
 xdg-desktop-portal-hyprland-git
 xwayland-satellite

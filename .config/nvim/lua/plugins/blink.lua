@@ -4,8 +4,11 @@ local lazy_dirs = vim.fn.glob("~/.local/share/nvim/lazy/*", true, true)
 return {
 	"saghen/blink.cmp",
 	event = "VeryLazy",
-	build = "cargo build --release",
+	build = function()
+		require("blink.cmp").build():wait(60000)
+	end,
 	dependencies = {
+		{ "saghen/blink.lib" },
 		{
 			"folke/lazydev.nvim",
 			ft = "lua",
