@@ -111,7 +111,7 @@ vim
 visual-studio-code-bin
 vscode-langservers-extracted
 walker
-waybar
+waybar-git
 wayle-bin
 wget
 xdg-desktop-portal-hyprland-git
