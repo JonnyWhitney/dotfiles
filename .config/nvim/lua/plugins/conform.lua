@@ -8,11 +8,10 @@ return {
 		{ "<leader>xd", ":FormatDisable<cr>", noremap = true, desc = "Disable Formatter" },
 	},
 	opts = {
-
 		formatters_by_ft = {
 			go = { "goimports" },
 
-			markdown = { "markdownlint", "injected" },
+			markdown = { "prettier", "injected" },
 
 			lua = { "stylua" },
 
@@ -21,6 +20,7 @@ return {
 			css = { "prettier" },
 			-- javascript = { "biome" },
 			liquid = { "prettier" },
+			json = { "prettier" },
 
 			bash = { "shfmt" },
 			sh = { "shfmt" },
