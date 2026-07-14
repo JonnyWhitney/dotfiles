@@ -84,9 +84,6 @@ fh() {
 }
 alias fzc='fzf | wl-copy'
 
-# NVM
-# source /usr/share/nvm/init-nvm.sh
-
 # Load sheldon plugins
 eval "$(sheldon source)"
 
