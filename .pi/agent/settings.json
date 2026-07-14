@@ -1,0 +1,23 @@
+{
+  "lastChangelogVersion": "0.80.2",
+  "compaction": {
+    "enabled": false
+  },
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "enableInstallTelemetry": false,
+  "theme": "dark",
+  "extensions": [
+    "/Users/jonathanloughlin/proj/PiExtentions/vim-mode"
+  ],
+  "showHardwareCursor": false,
+  "editorPaddingX": 0,
+  "defaultThinkingLevel": "high",
+  "defaultProvider": "openrouter",
+  "defaultModel": "z-ai/glm-5.2",
+  "enabledModels": [
+    "openrouter/deepseek/deepseek-v4-flash",
+    "openrouter/z-ai/glm-5.2"
+  ]
+}

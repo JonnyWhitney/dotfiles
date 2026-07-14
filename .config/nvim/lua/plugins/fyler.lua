@@ -3,17 +3,12 @@ return {
 	"A7Lavinraj/fyler.nvim",
 	dependencies = { "nvim-mini/mini.icons" },
 	opts = {
-		views = {
-			finder = {
-				win = {
-					kind = "split_left_most",
-					kinds = {
-						split_left_most = {
-							width = "40",
-						},
-					},
-				},
+		kind = "floating",
+		ui = {
+			hidden_items = {
+				switches = {},
 			},
+			indent_guides = true,
 		},
 	},
 	keys = {
