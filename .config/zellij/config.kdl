@@ -122,7 +122,7 @@ ui {
 
 scroll_buffer_size 1000000
 
-copy_command "wl-copy"
+copy_command "pbcopy"
 
 mouse_mode true
 mouse_hover_effects false
