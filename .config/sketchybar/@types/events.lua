@@ -1,0 +1,34 @@
+---@meta
+
+---@alias SketchybarEvent
+---| "front_app_switched"   # Active application changed; INFO = app name
+---| "space_change"         # Mission Control space switched; INFO = JSON of active spaces
+---| "space_windows_change" # Window created/destroyed on space
+---| "display_change"       # Active display changed; INFO = display ID
+---| "volume_change"        # System volume changed; INFO = volume percentage
+---| "brightness_change"    # Brightness changed; INFO = brightness percentage
+---| "power_source_change"  # Power source switched; INFO = "AC" or "BATTERY"
+---| "wifi_change"          # WiFi connection changed; INFO = SSID or empty
+---| "media_change"         # Now-playing media changed; INFO = media JSON
+---| "system_will_sleep"    # System is about to sleep
+---| "system_woke"          # System woke from sleep
+---| "mouse.entered"        # Mouse entered item bounds
+---| "mouse.exited"         # Mouse exited item bounds
+---| "mouse.clicked"        # Item was clicked; sets BUTTON, MODIFIER
+---| "mouse.scrolled"       # Mouse scrolled over item; sets SCROLL_DELTA
+---| "routine"              # Periodic tick driven by update_freq
+
+---@class SketchybarEventEnv
+---@field NAME string     Name of the item whose script is running
+---@field SENDER string   Event name that triggered this invocation, or "routine"
+---@field INFO string     Event-specific payload (app name, volume %, SSID, JSON, etc.)
+---@field CONFIG_DIR string Absolute path to the sketchybarrc directory
+---@field BUTTON? string  Mouse button: "left", "right", or "other" (mouse.clicked)
+---@field MODIFIER? string Modifier key: "shift", "ctrl", "alt", or "cmd" (mouse.clicked)
+---@field SCROLL_DELTA? string Scroll amount as a string (mouse.scrolled)
+---@field SELECTED? string "true"/"false" — whether this space is active (space items)
+---@field SID? string     Space identifier (space items)
+---@field DID? string     Display identifier (space items)
+---@field PERCENTAGE? string Current slider value 0–100 as string (slider mouse.clicked)
+---@field FOCUSED_WORKSPACE? string  Focused workspace ID (aerospace_workspace_change)
+---@field MODE? string               Active binding mode (aerospace_mode_change)

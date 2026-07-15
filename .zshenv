@@ -1,7 +1,6 @@
-export TERM=foot
-export VISUAL=nvim
-export EDITOR=nvim
-export BROWSER=/usr/share/applications/firefox-nightly.desktop
+export TERM=ghostty
+export VISUAL="$HOME/.config/scripts/macos/editor.sh"
+export EDITOR="$HOME/.config/scripts/macos/editor.sh"
 export MANPAGER='nvim +Man!'
 export FZF_DEFAULT_COMMAND='fd -H'
 export FZF_DEFAULT_OPTS="\

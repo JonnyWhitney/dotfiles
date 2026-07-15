@@ -1,0 +1,6 @@
+require("items.workspaces")
+require("items.clock")
+require("items.volume")
+require("items.battery")
+require("items.claude")
+require("items.mode")

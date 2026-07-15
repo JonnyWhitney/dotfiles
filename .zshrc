@@ -45,7 +45,7 @@ alias l-l='hyprlock -c ~/.config/hypr/hyprlock-lunch.conf'
 alias ls='lsd -Fv --group-directories-first'
 alias n='nvim'
 alias pim='nvim -c PiStart'
-alias tm='trash-put'
+alias tm='trash'
 alias z='zellij'
 
 alias nnvim="cd ~/.config/nvim && nvim"
@@ -100,3 +100,10 @@ eval "$(starship init zsh)"
 # Generate uv shell completions
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/jonathanloughlin/.lmstudio/bin"
+# End of LM Studio CLI section
+
+alias claude-personal='CLAUDE_CONFIG_DIR="/Users/jonathanloughlin/.claude-personal" claude'
+alias pim-personal='PI_CODING_AGENT_DIR="$HOME/.pi-personal/agent" nvim -c PiStart'
