@@ -84,6 +84,9 @@ fh() {
 }
 alias fzc='fzf | wl-copy'
 
+#Load Newt Colors
+export NEWT_COLORS_FILE="$HOME/.config/newt/tokyo-night.cfg"
+
 # Load sheldon plugins
 eval "$(sheldon source)"
 
@@ -93,5 +96,6 @@ eval "$(starship init zsh)"
 #Load Mise
 eval "$(mise activate zsh)"
 
-#Load Newt Colors
-export NEWT_COLORS_FILE="$HOME/.config/newt/tokyo-night.cfg"
+# Generate uv shell completions
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
