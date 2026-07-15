@@ -1,6 +1,7 @@
 [settings]
 
 [tools]
+# Langues / PMs
 dotnet = "latest"
 go = "latest"
 "go:golang.org/x/tools/gopls" = "latest"
@@ -9,3 +10,11 @@ node = "latest"
 pnpm = "latest"
 rust = "latest"
 uv = "latest"
+ 
+# Bash Tools
+bat = "latest"
+bottom = "latest"
+dust = "latest"
+fd = "latest"
+fzf = "latest"
+lsd = "latest"

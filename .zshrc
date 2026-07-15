@@ -15,6 +15,9 @@ autoload -Uz compinit && compinit
 autoload -Uz bashcompinit && bashcompinit
 _comp_options+=(globdots)
 
+#Load Mise
+eval "$(mise activate zsh)"
+
 # Git Aliases
 alias g='git'
 alias cf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -92,9 +95,6 @@ eval "$(sheldon source)"
 
 # Load starship
 eval "$(starship init zsh)"
-
-#Load Mise
-eval "$(mise activate zsh)"
 
 # Generate uv shell completions
 eval "$(uv generate-shell-completion zsh)"
