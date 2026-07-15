@@ -1,5 +1,8 @@
 [settings]
 
+[settings.npm]
+package_manager = "pnpm"
+
 [tools]
 # Langues / PMs
 dotnet = "latest"
@@ -22,9 +25,12 @@ lua-language-server = "latest"
 stylua = "latest"
 ## Python
 ruff = "latest"
+ty = "latest"
+## Typescript
+"npm:typescript" = "latest"
+"npm:typescript-language-server" = "latest"
 ## TOML
 taplo = "latest"
-
  
 # Bash Tools
 bat = "latest"
@@ -36,8 +42,10 @@ lsd = "latest"
 ripgrep = "latest"
 sheldon = "latest"
 starship = "latest"
+tree-sitter = "latest"
 
 # Dev tools
 delta = "latest"
 ffmpeg = "latest"
 github-cli = "latest"
+zellij = "latest"

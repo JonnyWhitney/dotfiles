@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.80.2",
+  "lastChangelogVersion": "0.80.6",
   "compaction": {
     "enabled": false
   },
@@ -19,5 +19,6 @@
   "enabledModels": [
     "openrouter/deepseek/deepseek-v4-flash",
     "openrouter/z-ai/glm-5.2"
-  ]
+  ],
+  "hideThinkingBlock": true
 }

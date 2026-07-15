@@ -54,8 +54,7 @@ return {
 		serverOpts["ts_ls"] = {}
 		serverOpts["templ"] = {}
 		serverOpts["taplo"] = {}
-		-- serverOpts["ty"] = {}
-		serverOpts["pyright"] = {}
+		serverOpts["ty"] = {}
 		serverOpts["qmlls"] = { cmd = { "qmlls6" } }
 		serverOpts["yamlls"] = {}
 
