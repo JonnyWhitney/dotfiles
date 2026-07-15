@@ -4,12 +4,27 @@
 # Langues / PMs
 dotnet = "latest"
 go = "latest"
-"go:golang.org/x/tools/gopls" = "latest"
-golangci-lint = "latest"
+lua = "latest"
 node = "latest"
 pnpm = "latest"
 rust = "latest"
 uv = "latest"
+
+# LS / Linters / Formatters
+## Bash
+shellcheck = "latest"
+shfmt = "latest"
+## Go
+"go:golang.org/x/tools/gopls" = "latest"
+golangci-lint = "latest"
+## Lua
+lua-language-server = "latest"
+stylua = "latest"
+## Python
+ruff = "latest"
+## TOML
+taplo = "latest"
+
  
 # Bash Tools
 bat = "latest"
@@ -18,3 +33,11 @@ dust = "latest"
 fd = "latest"
 fzf = "latest"
 lsd = "latest"
+ripgrep = "latest"
+sheldon = "latest"
+starship = "latest"
+
+# Dev tools
+delta = "latest"
+ffmpeg = "latest"
+github-cli = "latest"

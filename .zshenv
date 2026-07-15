@@ -29,10 +29,3 @@ export FZF_DEFAULT_OPTS="\
     --color=spinner:#ff007c \
     --preview='cat {+}' \
 "
-
-## Package manager paths
-# Luarocks path
-eval "$(luarocks path --bin)"
-if [[ ":$PATH:" != *":$HOME/.luarocks/bin"* ]]; then
-    export PATH="$PATH:$HOME/.luarocks/bin"
-fi
