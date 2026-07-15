@@ -1,0 +1,11 @@
+[settings]
+
+[tools]
+dotnet = "latest"
+go = "latest"
+"go:golang.org/x/tools/gopls" = "latest"
+golangci-lint = "latest"
+node = "latest"
+pnpm = "latest"
+rust = "latest"
+uv = "latest"
