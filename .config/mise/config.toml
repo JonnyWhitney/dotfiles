@@ -3,6 +3,26 @@
 [settings.npm]
 package_manager = "pnpm"
 
+# [bootstrap.brew.taps]
+# ""
+
+[bootstrap.packages]
+"brew:mise" = "latest"
+"brew:neovim" = "latest"
+"brew:tailscale" = "latest"
+"brew:borders" = "latest"
+"brew:sketchybar" = "latest"
+"brew:docker" = "latest"
+#Brew Casks
+"brew-cask:font-commit-mono-nerd-font" = "latest"
+"brew-cask:ghostty" = "latest"
+"brew-cask:hammerspoon" = "latest"
+"brew-cask:nikitabobko/tap/aerospace" = "latest"
+"brew-cask:dimentium/autoraise/autoraiseapp" = "latest"
+"brew-cask:unnaturalscrollwheels" = "latest"
+"brew-cask:firefox@nightly" = "latest"
+"brew-cask:docker-desktop" = "latest"
+
 [tools]
 # Langues / PMs
 dotnet = "latest"
@@ -29,6 +49,7 @@ ty = "latest"
 ## Typescript
 "npm:typescript" = "latest"
 "npm:typescript-language-server" = "latest"
+"npm:vscode-langservers-extracted" = "latest"
 ## TOML
 taplo = "latest"
  
@@ -43,9 +64,11 @@ ripgrep = "latest"
 sheldon = "latest"
 starship = "latest"
 tree-sitter = "latest"
+tokei = "latest"
 
 # Dev tools
 delta = "latest"
 ffmpeg = "latest"
 github-cli = "latest"
+pi = "0.80.10"
 zellij = "latest"

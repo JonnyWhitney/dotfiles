@@ -1,24 +1,26 @@
 {
-  "lastChangelogVersion": "0.80.6",
+  "lastChangelogVersion": "0.80.10",
+  "enableInstallTelemetry": false,
+  "theme": "dark",
+  "showHardwareCursor": false,
+  "editorPaddingX": 0,
+  "hideThinkingBlock": true,
   "compaction": {
     "enabled": false
   },
   "terminal": {
     "showTerminalProgress": true
   },
-  "enableInstallTelemetry": false,
-  "theme": "dark",
   "extensions": [
-    "/Users/jonathanloughlin/proj/PiExtentions/vim-mode"
+    "/Users/jonathanloughlin/proj/PiExtentions/pi-vim-mode"
   ],
-  "showHardwareCursor": false,
-  "editorPaddingX": 0,
-  "defaultThinkingLevel": "high",
-  "defaultProvider": "openrouter",
-  "defaultModel": "z-ai/glm-5.2",
+  "defaultThinkingLevel": "minimal",
+  "defaultProvider": "cloudflare-ai-gateway",
+  "defaultModel": "gpt-5.6-terra",
   "enabledModels": [
-    "openrouter/deepseek/deepseek-v4-flash",
-    "openrouter/z-ai/glm-5.2"
-  ],
-  "hideThinkingBlock": true
+    "cloudflare-ai-gateway/claude-sonnet-5",
+    "cloudflare-ai-gateway/gpt-5.6-luna",
+    "cloudflare-ai-gateway/gpt-5.6-terra",
+    "cloudflare-ai-gateway/gpt-5.6-sol"
+  ]
 }
