@@ -1,0 +1,18 @@
+[bootstrap.packages]
+"brew:mise" = "latest"
+"brew:neovim" = "latest"
+"brew:tailscale" = "latest"
+"brew:borders" = "latest"
+"brew:sketchybar" = "latest"
+"brew:docker" = "latest"
+#Brew Casks
+"brew-cask:font-commit-mono-nerd-font" = "latest"
+"brew-cask:ghostty" = "latest"
+"brew-cask:hammerspoon" = "latest"
+"brew-cask:nikitabobko/tap/aerospace" = "latest"
+"brew-cask:dimentium/autoraise/autoraiseapp" = "latest"
+"brew-cask:unnaturalscrollwheels" = "latest"
+"brew-cask:firefox@nightly" = "latest"
+"brew-cask:docker-desktop" = "latest"
+
+

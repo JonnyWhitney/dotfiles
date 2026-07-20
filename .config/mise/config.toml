@@ -3,26 +3,6 @@
 [settings.npm]
 package_manager = "pnpm"
 
-# [bootstrap.brew.taps]
-# ""
-
-[bootstrap.packages]
-"brew:mise" = "latest"
-"brew:neovim" = "latest"
-"brew:tailscale" = "latest"
-"brew:borders" = "latest"
-"brew:sketchybar" = "latest"
-"brew:docker" = "latest"
-#Brew Casks
-"brew-cask:font-commit-mono-nerd-font" = "latest"
-"brew-cask:ghostty" = "latest"
-"brew-cask:hammerspoon" = "latest"
-"brew-cask:nikitabobko/tap/aerospace" = "latest"
-"brew-cask:dimentium/autoraise/autoraiseapp" = "latest"
-"brew-cask:unnaturalscrollwheels" = "latest"
-"brew-cask:firefox@nightly" = "latest"
-"brew-cask:docker-desktop" = "latest"
-
 [tools]
 # Langues / PMs
 dotnet = "latest"
@@ -35,6 +15,7 @@ uv = "latest"
 
 # LS / Linters / Formatters
 ## Bash
+"npm:bash-language-server" = "latest"
 shellcheck = "latest"
 shfmt = "latest"
 ## Go
@@ -43,6 +24,8 @@ golangci-lint = "latest"
 ## Lua
 lua-language-server = "latest"
 stylua = "latest"
+## Markdown
+marksman = "latest"
 ## Python
 ruff = "latest"
 ty = "latest"
@@ -52,6 +35,8 @@ ty = "latest"
 "npm:vscode-langservers-extracted" = "latest"
 ## TOML
 taplo = "latest"
+## YAML
+"npm:yaml-language-server" = "latest"
  
 # Bash Tools
 bat = "latest"
@@ -65,6 +50,7 @@ sheldon = "latest"
 starship = "latest"
 tree-sitter = "latest"
 tokei = "latest"
+usage = "latest"
 
 # Dev tools
 delta = "latest"
