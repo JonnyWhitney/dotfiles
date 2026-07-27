@@ -3,36 +3,70 @@
     "cloudflare-ai-gateway": {
       "models": [
         {
-          "id": "gpt-5.6-luna",
+          "id": "moonshotai/kimi-k3",
+          "name": "Kimi K3",
+          "api": "openai-completions",
+          "baseUrl": "https://gateway.ai.cloudflare.com/v1/{CLOUDFLARE_ACCOUNT_ID}/{CLOUDFLARE_GATEWAY_ID}/compat",
+          "reasoning": true,
           "thinkingLevelMap": {
-            "none": null,
-            "low": "low",
-            "medium": "medium",
-            "high": "high",
-            "xhigh": "xhigh"
-          }
-        },
-        {
-          "id": "gpt-5.6-terra",
-          "thinkingLevelMap": {
-            "none": null,
-            "low": "low",
-            "medium": "medium",
-            "high": "high",
-            "xhigh": "xhigh"
-          }
-        },
-        {
-          "id": "gpt-5.6-sol",
-          "thinkingLevelMap": {
-            "none": null,
-            "low": "low",
-            "medium": "medium",
-            "high": "high",
-            "xhigh": "xhigh"
+            "off": null,
+            "max": "max"
+          },
+          "input": ["text", "image"],
+          "contextWindow": 1048576,
+          "cost": {
+            "input": 3,
+            "cacheRead": 0.3,
+            "cacheWrite": 0,
+            "output": 15
+          },
+          "compat": {
+            "supportsStore": false,
+            "supportsDeveloperRole": false,
+            "supportsReasoningEffort": true,
+            "maxTokensField": "max_tokens",
+            "supportsStrictMode": false,
+            "supportsLongCacheRetention": false,
+            "sendSessionAffinityHeaders": true,
+            "deferredToolsMode": "kimi"
           }
         }
-      ]
+      ],
+      "modelOverrides": {
+        "gpt-5.6-luna": {
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
+            "low": "low",
+            "medium": "medium",
+            "high": "high",
+            "xhigh": "xhigh",
+            "max": "max"
+          }
+        },
+        "gpt-5.6-terra": {
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
+            "low": "low",
+            "medium": "medium",
+            "high": "high",
+            "xhigh": "xhigh",
+            "max": "max"
+          }
+        },
+        "gpt-5.6-sol": {
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": null,
+            "low": "low",
+            "medium": "medium",
+            "high": "high",
+            "xhigh": "xhigh",
+            "max": "max"
+          }
+        }
+      }
     }
   }
 }
