@@ -17,14 +17,16 @@ keybinds clear-defaults=true {
         bind "Alt o"       { ToggleFloatingPanes; }
         bind "Alt v"       { NewPane "right"; }
         bind "Alt s"       { NewPane "down"; }
-        bind "Alt ,"       {
-            LaunchOrFocusPlugin "zellij:session-manager" {
+        bind "Alt S"       {
+            LaunchOrFocusPlugin "zellij:session-manager" { 
                 floating true;
+                move_to_focused_tab true;
             }
         }
         bind "Alt Shift /" {
             LaunchOrFocusPlugin "file:~/.config/zellij/zellij_forgot.wasm" {
-                floating true
+                floating true 
+                move_to_focused_tab true;
             }
         }
         bind "Alt 1"       { GoToTab 1; }
@@ -107,7 +109,7 @@ plugins {
     session-manager location="zellij:session-manager"
     status-bar location="zellij:status-bar"
     strider location="zellij:strider"
-    tab-bar location="zellij:tab-bar"
+    tab-bar location="zellij:tab-bar" 
     zjstatus location="file:~/.config/zellij/zjstatus.wasm"
 }
 
@@ -127,4 +129,4 @@ mouse_hover_effects false
 advanced_mouse_actions false
 focus_follows_mouse true
 
-session_serialization false
+pane_viewport_serialization true
