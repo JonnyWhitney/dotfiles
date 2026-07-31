@@ -1,6 +1,5 @@
 [bootstrap.packages]
 "brew:mise" = "latest"
-"brew:neovim" = "latest"
 "brew:tailscale" = "latest"
 "brew:borders" = "latest"
 "brew:sketchybar" = "latest"
