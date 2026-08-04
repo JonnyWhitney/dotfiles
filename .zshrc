@@ -44,6 +44,7 @@ alias l-s='hyprlock -c ~/.config/hypr/hyprlock-server.conf'
 alias l-l='hyprlock -c ~/.config/hypr/hyprlock-lunch.conf'
 alias ls='lsd -Fv --group-directories-first'
 alias n='nvim'
+alias npi='nvim -c PiStart'
 alias tm='trash-put'
 alias z='zellij'
 
