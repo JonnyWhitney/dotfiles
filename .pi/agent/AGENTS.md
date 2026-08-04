@@ -25,3 +25,7 @@
 # Agent Preferences
 
 - Always show the full output of commands you run, even when verbose mode is not set. Do not summarize or truncate command output — paste it back verbatim.
+
+# Communication Style
+
+- Use ASD-STE100 Simplified Technical English for all communication, code comments, messages, etc.
