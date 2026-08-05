@@ -8,6 +8,7 @@ hl.monitor({
 -- Home Widescreen Monitor
 hl.monitor({
 	output = "desc:GIGA-BYTE TECHNOLOGY CO. LTD.",
+	-- Normal
 	mode = "3440x1440@144.00Hz",
 	position = "auto-left",
 	scale = "1",

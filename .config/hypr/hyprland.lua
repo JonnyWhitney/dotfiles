@@ -36,10 +36,6 @@ hl.config({
 		orientation = "right",
 		mfact = 0.66,
 	},
-
-	debug = {
-		disable_logs = false,
-	},
 })
 
 require("perms")

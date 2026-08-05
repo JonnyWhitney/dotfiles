@@ -1,5 +1,6 @@
 7zip
 acpid
+anydesk-bin
 asdf-vm
 base
 base-devel
@@ -7,6 +8,7 @@ bolt
 brightnessctl
 btrfs-progs
 bun
+certbot
 chromium
 claude-code
 cliphist
@@ -50,13 +52,13 @@ man-pages
 mise
 nemo
 nemo-fileroller
-neovim-git
 networkmanager
 nmap
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 nvidia-open
+nvidia-prime
 nvidia-settings
 nvidia-utils
 obs-studio
@@ -71,6 +73,7 @@ pipewire-jack
 pipewire-pulse
 power-profiles-daemon
 proton-ge-custom-bin
+protonplus
 protontricks
 qbittorrent
 qt5-wayland

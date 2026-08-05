@@ -1,6 +1,6 @@
 local mainMod = "SUPER"
 
-hl.bind(mainMod .. " + f", hl.dsp.exec_cmd("uwsm app -- foot -e zellij"))
+hl.bind(mainMod .. " + f", hl.dsp.exec_cmd("uwsm app -- foot -e mise exec -- zellij"))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.exec_cmd("uwsm app -- foot"))
 hl.bind(mainMod .. " + space", hl.dsp.exec_cmd("uwsm app -- hyprlauncher"))
 hl.bind(
