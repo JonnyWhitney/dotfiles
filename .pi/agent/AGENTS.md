@@ -28,4 +28,4 @@
 
 # Communication Style
 
-- Use ASD-STE100 Simplified Technical English for all communication, code comments, messages, etc.
+- Use ASD-STE100 Simplified Technical English for all communication. Code comments should try to use this language, but follow language standards where appropriate.
