@@ -20,6 +20,8 @@ return {
 		"PiModel",
 		"PiThinking",
 		"PiLog",
+		"PiFork",
+		"PiClone",
 	},
 	-- setup() is optional; uncomment to customize:
 	-- opts = { debug = true },

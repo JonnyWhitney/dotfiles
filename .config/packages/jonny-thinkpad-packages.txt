@@ -25,6 +25,7 @@ foot
 fwupd
 fzf
 gamemode
+ghostty
 git
 git-lfs
 gnome-tweaks

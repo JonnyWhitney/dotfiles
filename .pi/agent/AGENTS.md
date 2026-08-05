@@ -5,8 +5,7 @@
 
 # Git
 
-- When asked to create a git commit message, do not create the commit. Instead, provide the message to the user for them to create the commit themselves.
-- Before asking a question, provide context on the question, examples of the current code and possible changes, and possible ways to address, then ask with a clear prompt to the user.
+- When asked to create a git commit message, do not create the commit. Instead, provide the commit message title and body to the user for them to create the commit themselves.
 - Do not reference previous implementations when authoring comments.
 
 # Planning
@@ -16,6 +15,7 @@
   - Questions should provide proper context. You must explain the context of the questions, and why it is being asked every time.
   - Break implementation into small, focused phases where each phase constitutes enough work for a single commit.
   - When a phase ends, stop execution, provide the user with a git commit message and tests to validate the change, then await the user's confirmation before continuing to the next phase.
+  - Documentation should be written along side other code, do not save documentation writing until the end.
 
 # Tools
 
@@ -25,6 +25,7 @@
 # Agent Preferences
 
 - Always show the full output of commands you run, even when verbose mode is not set. Do not summarize or truncate command output — paste it back verbatim.
+- Before asking a question, provide context on the question, examples of the current code and possible changes, and possible ways to address, then ask with a clear prompt to the user.
 
 # Communication Style
 

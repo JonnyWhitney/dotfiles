@@ -14,14 +14,7 @@
   "extensions": [
     "/Users/jonathanloughlin/proj/PiExtentions/pi-vim-mode"
   ],
-  "defaultThinkingLevel": "medium",
-  "defaultProvider": "cloudflare-ai-gateway",
-  "defaultModel": "gpt-5.6-terra",
-  "enabledModels": [
-    "cloudflare-ai-gateway/claude-sonnet-5",
-    "cloudflare-ai-gateway/gpt-5.6-luna",
-    "cloudflare-ai-gateway/gpt-5.6-terra",
-    "cloudflare-ai-gateway/gpt-5.6-sol",
-    "cloudflare-ai-gateway/moonshotai/kimi-k3"
-  ]
+  "defaultThinkingLevel": "xhigh",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-terra"
 }
