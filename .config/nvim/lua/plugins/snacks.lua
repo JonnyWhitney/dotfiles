@@ -9,6 +9,50 @@ return {
 		words = { enabled = true },
 		---@type snacks.picker.Config
 		picker = {
+			-- ui_select = false,
+			sources = {
+				select = {
+					auto_close = false,
+					config = function(opts)
+						local question_lines = vim.split(opts.title, "\n", {
+							plain = true,
+						})
+
+						opts.layout.hidden = {}
+						opts.layout.layout = {
+							backdrop = false,
+							position = "bottom",
+							width = 0.8,
+							max_width = vim.o.columns,
+							box = "vertical",
+							border = "rounded",
+							title = "Select",
+							title_pos = "center",
+							{
+								win = "preview",
+								title = "Question",
+								height = #question_lines,
+								border = "bottom",
+							},
+							{ win = "input", height = 1, border = "bottom" },
+							{ win = "list", border = "none" },
+						}
+
+						opts.preview = function(ctx)
+							ctx.preview:reset()
+							ctx.preview:set_lines(question_lines)
+							ctx.preview:wo({
+								wrap = true,
+								number = false,
+								relativenumber = false,
+								signcolumn = "no",
+							})
+						end
+
+						return opts
+					end,
+				},
+			},
 			previewers = {
 				diff = {
 					cmd = { "delta" },

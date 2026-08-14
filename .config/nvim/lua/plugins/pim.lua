@@ -1,5 +1,4 @@
 return {
-
 	"JonnyWhitney/pim",
 	keys = {
 		{ "<leader>pm", "<cmd>PiModel<cr>", desc = "Pi: Select model" },
@@ -11,18 +10,27 @@ return {
 	cmd = {
 		"PiStart",
 		"PiToggle",
-		"PiStop",
-		"PiRestart",
-		"PiAbort",
 		"PiSend",
+		"PiAbort",
 		"PiResume",
+		"PiTree",
+		"PiTrust",
 		"PiNewSession",
-		"PiModel",
-		"PiThinking",
-		"PiLog",
 		"PiFork",
 		"PiClone",
+		"PiModel",
+		"PiThinking",
+		"PiRestart",
+		"PiStop",
+		"PiLog",
 	},
-	-- setup() is optional; uncomment to customize:
-	-- opts = { debug = true },
+	config = function()
+		vim.api.nvim_create_autocmd("BufWinEnter", {
+			callback = function(args)
+				if vim.b[args.buf].pim_role == "input" then
+					vim.opt_local.spell = true
+				end
+			end,
+		})
+	end,
 }
