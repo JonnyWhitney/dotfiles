@@ -3,10 +3,11 @@ return {
 	"folke/snacks.nvim",
 	priority = 1000,
 	lazy = false,
-	---@type snacks.picker.Config
+	---@type snacks.Config
 	opts = {
 		quickfile = { enabled = true },
 		words = { enabled = true },
+		bigfile = { enabled = true },
 		---@type snacks.picker.Config
 		picker = {
 			-- ui_select = false,

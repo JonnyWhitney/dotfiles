@@ -1,11 +1,11 @@
 return {
-	"JonnyWhitney/pim",
+	-- "JonnyWhitney/pim",
+	dir = "~/proj/PiExtentions/pim/",
 	keys = {
-		{ "<leader>pm", "<cmd>PiModel<cr>", desc = "Pi: Select model" },
-		{ "<leader>pt", "<cmd>PiThinking<cr>", desc = "Pi: Set thinking level" },
-		{ "<leader>ps", "<cmd>PiStart<cr>", desc = "Pi: Start pi" },
-		{ "<leader>pq", "<cmd>PiStop<cr>", desc = "Pi: Stop pi" },
-		{ "<leader>pr", "<cmd>PiResume<cr>", desc = "Pi: Resume a pi session" },
+		{ "<leader>psm", "<cmd>PiModel<cr>", desc = "Pi: Select model" },
+		{ "<leader>pst", "<cmd>PiThinking<cr>", desc = "Pi: Set thinking level" },
+		{ "<leader>pt", "<cmd>PiTree<cr>", desc = "Pi: View tree" },
+		{ "<leader>pr", "<cmd>PiResume<cr>", desc = "Pi: Resume session" },
 	},
 	cmd = {
 		"PiStart",
@@ -31,6 +31,11 @@ return {
 					vim.opt_local.spell = true
 				end
 			end,
+		})
+
+		require("pim").setup({
+			input = { min_height = 10, max_height = 30 },
+			completion = { respect_gitignore = false },
 		})
 	end,
 }

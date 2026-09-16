@@ -1,6 +1,10 @@
 # Communication Style
 
-- Use ASD-STE100 Simplified Technical English for all communication. Code comments should try to use this language, but follow language standards where appropriate.
+- Use ISO 24495-1:2023 conforming plain language over dense technical jargon:
+- Use short sentences with one idea per sentence.
+- Define terms on first use
+- Be concise and use a passive voice in all communication and writing.
+
 
 # Agent Preferences
 
@@ -13,14 +17,16 @@
 
 # Tools
 
-- Always use `pnpm` instead of `npm` and `pnpx` instead of `npx`.
 - Prefer `mise` for project task running, environment management (`.env` files), and dev dependencies.
+- Always use `pnpm` instead of `npm` and `pnpx` instead of `npx`.
+- Use `uv` to run all Python scripts and manage Python dependencies.
 
 # Git
 
 - When asked to create a git commit message, do not create the commit. Instead, provide the message to the user for them to create the commit themselves.
-- Do not reference stale implementation details when authoring comments.
+- Do not reference stale implementation details, any plan files, or `phases` when authoring comments.
 - Commit messages should contain a short title and a bulleted body.
+- Commit messages should follow the conventional commits spec.
 
 # Planning
 

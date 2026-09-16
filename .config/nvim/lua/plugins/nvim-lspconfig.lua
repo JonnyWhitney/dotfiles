@@ -41,7 +41,15 @@ return {
 		serverOpts["html"] = { filetypes = { "html", "templ" } }
 		serverOpts["hyprls"] = {}
 		serverOpts["jsonls"] = {}
-		serverOpts["lua_ls"] = {}
+		serverOpts["lua_ls"] = {
+			settings = {
+				Lua = {
+					workspace = {
+						library = { vim.env.VIMRUNTIME .. "/lua" },
+					},
+				},
+			},
+		}
 		serverOpts["marksman"] = {}
 		serverOpts["rust_analyzer"] = {}
 		serverOpts["shopify_theme_ls"] = {}
@@ -51,7 +59,40 @@ return {
 			end,
 		}
 		serverOpts["systemd_lsp"] = {}
-		serverOpts["ts_ls"] = {}
+		local ts_root_markers = { "package-lock.json", "pnpm-lock.yaml", "yarn.lock", "bun.lock", "bun.lockb", ".git" }
+		local function has_tsserver_js(root)
+			return vim.uv.fs_stat(vim.fs.joinpath(root, "node_modules/typescript/lib/tsserver.js")) ~= nil
+		end
+		serverOpts["ts_ls"] = {
+			root_dir = function(bufnr, on_dir)
+				local root = vim.fs.root(bufnr, ts_root_markers)
+				if root and has_tsserver_js(root) then
+					on_dir(root)
+				end
+			end,
+		}
+		serverOpts["tsgo"] = {
+			root_dir = function(bufnr, on_dir)
+				local root = vim.fs.root(bufnr, ts_root_markers)
+				if root and not has_tsserver_js(root) then
+					on_dir(root)
+				end
+			end,
+			cmd = function(dispatchers, config)
+				local cmd = "tsgo"
+				local root = (config or {}).root_dir
+				if root then
+					for _, bin in ipairs({ "tsgo", "tsc" }) do
+						local local_bin = vim.fs.joinpath(root, "node_modules/.bin", bin)
+						if vim.fn.executable(local_bin) == 1 then
+							cmd = local_bin
+							break
+						end
+					end
+				end
+				return vim.lsp.rpc.start({ cmd, "--lsp", "--stdio" }, dispatchers)
+			end,
+		}
 		serverOpts["templ"] = {}
 		serverOpts["taplo"] = {}
 		serverOpts["ty"] = {}

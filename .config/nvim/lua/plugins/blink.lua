@@ -9,6 +9,7 @@ return {
 	end,
 	dependencies = {
 		{ "saghen/blink.lib" },
+		{ dir = "~/proj/PiExtentions/pim/" },
 		{
 			"folke/lazydev.nvim",
 			ft = "lua",
@@ -16,6 +17,10 @@ return {
 			---@class lazydev.Config
 			opts = {
 				library = lazy_dirs,
+				enabled = function(root_dir)
+					return not vim.uv.fs_stat(vim.fs.joinpath(root_dir, ".luarc.json"))
+				end,
+
 				integrations = {
 					cmp = false,
 					blink = true,
@@ -35,6 +40,12 @@ return {
 			},
 			providers = {
 				lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
+				omni = {
+					enabled = function()
+						local omnifunc = vim.bo.omnifunc
+						return type(omnifunc) == "string" and omnifunc ~= "" and omnifunc ~= "v:lua.vim.lsp.omnifunc"
+					end,
+				},
 			},
 			per_filetype = {
 				minifiles = { inherit_defaults = false },
@@ -98,5 +109,9 @@ return {
 			},
 		},
 	},
+	config = function(_, opts)
+		opts.sources = require("pim.completion.blink").setup(opts.sources)
+		require("blink.cmp").setup(opts)
+	end,
 	opts_extend = { "sources.default" },
 }
